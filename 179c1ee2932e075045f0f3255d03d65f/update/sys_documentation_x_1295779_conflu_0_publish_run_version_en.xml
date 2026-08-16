@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>version</element>
             <help/>
-            <hint/>
+            <hint>Confluence page version number after this operation</hint>
             <label>Version</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publish_run</name>

@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>status</element>
             <help/>
-            <hint/>
+            <hint>Outcome of this publish attempt</hint>
             <label>Status</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publish_run</name>

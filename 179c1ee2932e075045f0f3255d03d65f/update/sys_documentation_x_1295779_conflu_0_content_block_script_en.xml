@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>script</element>
             <help/>
-            <hint/>
+            <hint>Server-side script for generating dynamic content programmatically</hint>
             <label>Script</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

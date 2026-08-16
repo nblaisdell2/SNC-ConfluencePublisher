@@ -3,7 +3,6 @@
         <access>public</access>
         <access_token_lifespan>1800</access_token_lifespan>
         <active>true</active>
-        <allow_snc_user_exchange>false</allow_snc_user_exchange>
         <auth_aig_client>false</auth_aig_client>
         <auth_cimd_client>false</auth_cimd_client>
         <auth_code_lifespan>0</auth_code_lifespan>
@@ -12,7 +11,7 @@
         <bind_token_to_session>false</bind_token_to_session>
         <certificate_url/>
         <client_id>wTSIok5ZDXr0ETxbanIDLm8kc5AT1980</client_id>
-        <client_secret>﷞﷟﷒094ea8c093ea831045f0f3255d03d6aa﷬﷔1﷬﷭AiY74FXkTxlHOpjLP9j9dg==TqKW-AiaLQ_L1tAGp3oxJ02ZnV2D-nFFgPrlzpfkbtTiMzeZc8LD3gOBIfk4JbMfaRscSUz0tqjJlXMclByqTG3q3ssvjFsVBvVLvAcIC9o_v-Afq6LCGKsIwnM=﷮﷯</client_secret>
+        <client_secret>﷞﷟﷒7db8a32083720710c9389650ceaad3a8﷬﷔1﷬﷭oLnpoBZNj38StC7DNV6PIg==w91NR5rsXYmFDzOKk2HMPSzwkjlgBS9MrwKxYsbJ8PHeqRAE0cmHtbliqaF3esgAZK8oFV66aY7XxW4iKbFoehOhMhalkYtLnI_1ltmd5xQ8uSRFKmAHfNLGcN0=﷮﷯</client_secret>
         <client_type/>
         <client_uuid>c33449e093fe439045f0f3255d03d6b6</client_uuid>
         <code_challenge_method>S256</code_challenge_method>
@@ -31,7 +30,7 @@
         <only_rest_processor>false</only_rest_processor>
         <protocol_name/>
         <public_client>false</public_client>
-        <redirect_url>https://dev379033.service-now.com/oauth_redirect.do</redirect_url>
+        <redirect_url>https://dev186772.service-now.com/oauth_redirect.do</redirect_url>
         <refresh_token_lifespan>8640000</refresh_token_lifespan>
         <refresh_token_url/>
         <restricted_binding>false</restricted_binding>
@@ -45,14 +44,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-16 00:44:08</sys_created_on>
         <sys_id>073449e093fe439045f0f3255d03d6b6</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Confluence Publisher</sys_name>
         <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
         <sys_update_name>oauth_entity_073449e093fe439045f0f3255d03d6b6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-16 01:23:08</sys_updated_on>
+        <sys_updated_on>2026-08-16 15:33:57</sys_updated_on>
         <token_format>opaque</token_format>
         <token_url>https://auth.atlassian.com/oauth/token</token_url>
         <type>oauth_provider</type>

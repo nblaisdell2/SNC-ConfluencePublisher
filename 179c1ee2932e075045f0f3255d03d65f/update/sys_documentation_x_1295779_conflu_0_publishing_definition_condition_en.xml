@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>condition</element>
             <help/>
-            <hint/>
+            <hint>Filter to control which source records are eligible for publishing</hint>
             <label>Condition</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

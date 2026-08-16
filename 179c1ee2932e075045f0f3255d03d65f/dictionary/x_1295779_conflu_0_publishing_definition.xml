@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="3566408dcc3740c39d6a09519cfd2f37" label="Publishing Definition" name="x_1295779_conflu_0_publishing_definition" type="collection">
-        <element label="Parent Page ID" max_length="40" name="parent_page_id" type="string"/>
-        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
-        <element dependent="source_table" label="Condition" max_length="4000" name="condition" type="conditions"/>
-        <element label="Version Message Template" max_length="200" name="version_message_template" type="string"/>
-        <element label="Source Table" max_length="80" name="source_table" type="table_name"/>
-        <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
-        <element default="by_title_in_space" label="Match Strategy" max_length="40" name="match_strategy" type="choice">
+        <element hint="Confluence space key where pages will be created (e.g. ENG, ITSM)" label="Target Space Key" mandatory="true" max_length="40" name="target_space_key" type="string"/>
+        <element hint="Confluence page ID under which new pages will be nested as children" label="Parent Page ID" max_length="40" name="parent_page_id" type="string"/>
+        <element hint="The ServiceNow table whose records will be published to Confluence" label="Source Table" max_length="80" name="source_table" type="table_name"/>
+        <element display="true" hint="A descriptive label to identify this publishing rule" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element hint="Template for page titles using ${field_name} placeholders from the source record" label="Title Template" mandatory="true" max_length="200" name="title_template" type="string"/>
+        <element default="true" hint="When unchecked, this definition is disabled and will not publish" label="Active" max_length="40" name="active" type="boolean"/>
+        <element dependent="source_table" hint="Filter to control which source records are eligible for publishing" label="Condition" max_length="4000" name="condition" type="conditions"/>
+        <element default="by_title_in_space" hint="How to find an existing Confluence page for updates" label="Match Strategy" max_length="40" name="match_strategy" type="choice">
             <choice>
                 <element inactive_on_update="false" label="By Stored Page ID" sequence="2" value="by_stored_page_id"/>
                 <element inactive_on_update="false" label="By Title in Space" sequence="1" value="by_title_in_space"/>
             </choice>
         </element>
-        <element label="Template Page ID" mandatory="true" max_length="40" name="template_page_id" type="string"/>
-        <element label="Target Space Key" mandatory="true" max_length="40" name="target_space_key" type="string"/>
-        <element label="Title Template" mandatory="true" max_length="200" name="title_template" type="string"/>
-        <element default="upsert" label="Mode" max_length="40" name="mode" type="choice">
+        <element default="upsert" hint="Create = always new page, Update = only existing, Upsert = create or update" label="Mode" max_length="40" name="mode" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Update" sequence="2" value="update"/>
-                <element inactive_on_update="false" label="Upsert" sequence="3" value="upsert"/>
                 <element inactive_on_update="false" label="Create" sequence="1" value="create"/>
+                <element inactive_on_update="false" label="Upsert" sequence="3" value="upsert"/>
+                <element inactive_on_update="false" label="Update" sequence="2" value="update"/>
             </choice>
         </element>
+        <element hint="Comment added to Confluence page version history on each update" label="Version Message Template" max_length="200" name="version_message_template" type="string"/>
+        <element hint="Optional Confluence page ID used as a structural template — placeholders in the template are replaced by matching content block output or source record field values" label="Template Page ID" max_length="40" name="template_page_id" type="string"/>
     </element>
 </database>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="d72b22d53ced473c896bb0c79f9e796d" label="Content Block" name="x_1295779_conflu_0_content_block" type="collection">
-        <element label="Type" mandatory="true" max_length="40" name="type" type="choice">
+        <element hint="Field name on the source record containing code to display" label="Code Source Field" max_length="80" name="code_source_field" type="string"/>
+        <element hint="Server-side script for generating dynamic content programmatically" label="Script" max_length="8000" name="script" type="script"/>
+        <element hint="The Confluence rendering format: table, code, link, label, list, panel, or status" label="Type" mandatory="true" max_length="40" name="type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Panel" sequence="6" value="panel"/>
-                <element inactive_on_update="false" label="Link" sequence="3" value="link"/>
-                <element inactive_on_update="false" label="Code" sequence="2" value="code"/>
                 <element inactive_on_update="false" label="Label" sequence="4" value="label"/>
                 <element inactive_on_update="false" label="Status" sequence="7" value="status"/>
-                <element inactive_on_update="false" label="Table" sequence="1" value="table"/>
+                <element inactive_on_update="false" label="Link" sequence="3" value="link"/>
+                <element inactive_on_update="false" label="Code" sequence="2" value="code"/>
+                <element inactive_on_update="false" label="Panel" sequence="6" value="panel"/>
                 <element inactive_on_update="false" label="Bullet List" sequence="5" value="bullet_list"/>
+                <element inactive_on_update="false" label="Table" sequence="1" value="table"/>
             </choice>
         </element>
-        <element default="50" label="Max Rows" max_length="40" name="max_rows" type="integer"/>
-        <element label="Columns" max_length="500" name="columns" type="string"/>
-        <element label="Static Value" max_length="1000" name="static_value" type="string"/>
-        <element hint="Field whose value becomes the code body" label="Code Source Field" max_length="80" name="code_source_field" type="string"/>
-        <element label="Source Table" max_length="80" name="source_table" type="table_name"/>
-        <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
-        <element label="Publishing Definition" max_length="32" name="publishing_definition" reference="x_1295779_conflu_0_publishing_definition" type="reference"/>
-        <element hint="Optional display labels" label="Column Labels" max_length="500" name="column_labels" type="string"/>
-        <element label="Script" max_length="8000" name="script" type="script"/>
-        <element hint="For code blocks (e.g. javascript, json)" label="Code Language" max_length="40" name="code_language" type="string"/>
-        <element label="Source Query" max_length="1000" name="source_query" type="string"/>
+        <element default="50" hint="Maximum number of rows to include in a table-type block" label="Max Rows" max_length="40" name="max_rows" type="integer"/>
+        <element hint="Table to query data from for this block (can differ from definition)" label="Source Table" max_length="80" name="source_table" type="table_name"/>
+        <element hint="Syntax highlighting language (e.g. javascript, python, sql)" label="Code Language" max_length="40" name="code_language" type="string"/>
+        <element hint="Comma-separated field names for table-type blocks (e.g. number,state)" label="Columns" max_length="500" name="columns" type="string"/>
+        <element hint="The parent definition this block belongs to" label="Publishing Definition" max_length="32" name="publishing_definition" reference="x_1295779_conflu_0_publishing_definition" type="reference"/>
+        <element display="true" hint="A descriptive label to identify this content block" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element hint="Encoded query to filter records from the source table" label="Source Query" max_length="1000" name="source_query" type="string"/>
+        <element hint="Fixed text for label, link URL, or status badge value" label="Static Value" max_length="1000" name="static_value" type="string"/>
+        <element hint="Custom display headers matching column order (e.g. Number,State)" label="Column Labels" max_length="500" name="column_labels" type="string"/>
         <index name="index">
             <element name="publishing_definition"/>
         </index>

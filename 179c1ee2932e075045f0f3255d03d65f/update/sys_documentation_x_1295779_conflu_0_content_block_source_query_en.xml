@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>source_query</element>
             <help/>
-            <hint/>
+            <hint>Encoded query to filter records from the source table</hint>
             <label>Source Query</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

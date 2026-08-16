@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>column_labels</element>
             <help/>
-            <hint>Optional display labels</hint>
+            <hint>Custom display headers matching column order (e.g. Number,State)</hint>
             <label>Column Labels</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

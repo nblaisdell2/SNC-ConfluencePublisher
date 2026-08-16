@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>active</element>
             <help/>
-            <hint/>
+            <hint>When unchecked, this definition is disabled and will not publish</hint>
             <label>Active</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

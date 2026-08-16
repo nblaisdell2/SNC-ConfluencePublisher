@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>cloud_id</element>
             <help/>
-            <hint>Populated by the Discover Cloud ID action</hint>
+            <hint>Atlassian Cloud ID (UUID) used for API routing — retrieved from Atlassian</hint>
             <label>Cloud ID</label>
             <language>en</language>
             <name>x_1295779_conflu_0_connection_config</name>

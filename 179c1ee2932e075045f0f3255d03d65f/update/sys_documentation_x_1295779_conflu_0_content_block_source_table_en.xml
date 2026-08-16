@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>source_table</element>
             <help/>
-            <hint/>
+            <hint>Table to query data from for this block (can differ from definition)</hint>
             <label>Source Table</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

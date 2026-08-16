@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>max_rows</element>
             <help/>
-            <hint/>
+            <hint>Maximum number of rows to include in a table-type block</hint>
             <label>Max Rows</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>code_source_field</element>
             <help/>
-            <hint>Field whose value becomes the code body</hint>
+            <hint>Field name on the source record containing code to display</hint>
             <label>Code Source Field</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

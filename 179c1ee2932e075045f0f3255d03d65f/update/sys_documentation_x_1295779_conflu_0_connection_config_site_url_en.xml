@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>site_url</element>
             <help/>
-            <hint>Confluence Cloud site URL, e.g. https://acme.atlassian.net</hint>
+            <hint>Confluence Cloud site URL (e.g. https://acme.atlassian.net)</hint>
             <label>Site URL</label>
             <language>en</language>
             <name>x_1295779_conflu_0_connection_config</name>

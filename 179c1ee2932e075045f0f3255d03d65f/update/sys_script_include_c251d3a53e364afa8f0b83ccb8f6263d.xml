@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1295779_conflu_0.ConfluencePublisher</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Main orchestrator for publishing ServiceNow records to Confluence Cloud. Supports three content strategies: (1) Template mode — fetches a Confluence template page and resolves ${placeholder} tokens with content block output or record field values; (2) Content Blocks mode — assembles blocks sequentially into a full page; (3) Custom ADF mode — accepts a programmatic ADF document for direct publishing. Routes via publish(definitionSysId, [customAdf]).</description>
+        <mobile_callable>false</mobile_callable>
+        <name>ConfluencePublisher</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ConfluencePublisher = Class.create()
+ConfluencePublisher.prototype = {
+    initialize: function () {
+        this.ALIAS_NAME = 'x_1295779_conflu_0.Confluence'
+        this.oauthProfileSysId = this._getOAuthProfileSysId()
+        // Cache the access token for the lifetime of this instance
+        this._accessToken = null
+        gs.info('ConfluencePublisher: Initialized with OAuth profile sys_id: ' + this.oauthProfileSysId)
+    },
+
+    /**
+     * Publish source records to Confluence using one of three content strategies:
+     *
+     * 1. TEMPLATE MODE: template_page_id is set on the definition.
+     *    Fetches the template page from Confluence, resolves ${placeholder} tokens
+     *    using content blocks (by name match) and/or source record field values.
+     *
+     * 2. CONTENT BLOCKS MODE: No template_page_id, but content blocks exist.
+     *    Assembles all content blocks sequentially into a full ADF document.
+     *
+     * 3. CUSTOM ADF MODE: A custom ADF object is passed as the second parameter.
+     *    Uses the provided ADF directly as the page body (per record, with
+     *    ${field} placeholders resolved in text nodes).
+     *
+     * @param {string} definitionSysId - sys_id of the publishing definition
+     * @param {object} [customAdf] - optional ADF document object for custom mode
+     */
+    publish: function (definitionSysId, customAdf) {
+        var definition = this._getDefinition(definitionSysId)
+        if (!definition) {
+            gs.addErrorMessage('Publishing definition not found.')
+            return
+        }
+
+        if (definition.active !== 'true' && definition.active !== '1') {
+            gs.addErrorMessage('Publishing definition is not active.')
+            return
+        }
+
+        var config = this._getConnectionConfig()
+        if (!config || !config.cloud_id) {
+            gs.addErrorMessage('Connection configuration not found or missing cloud_id. Please configure the Confluence connection.')
+            return
+        }
+
+        if (!this.oauthProfileSysId) {
+            gs.warn('ConfluencePublisher: OAuth profile not found - will use manual token request')
+        }
+
+        var spaceKey = definition.target_space_key
+        var spaceId = this._getSpaceId(config.cloud_id, spaceKey, definition.parent_page_id)
+        if (!spaceId) {
+            gs.addErrorMessage('Could not resolve space ID for space key: ' + spaceKey + '. Verify the space exists and the OAuth token has access. Check system logs for details.')
+            return
+        }
+
+        // Determine content strategy
+        var contentStrategy = this._determineContentStrategy(definition, customAdf)
+        gs.info('ConfluencePublisher.publish: Using content strategy: ' + contentStrategy.mode)
+
+        // For template mode, fetch the template body once (shared across all records)
+        var templateAdf = null
+        if (contentStrategy.mode === 'template') {
+            templateAdf = this._fetchTemplateBody(config.cloud_id, definition.template_page_id)
+            if (!templateAdf) {
+                gs.addErrorMessage('Could not fetch template page body from Confluence (page ID: ' + definition.template_page_id + '). Verify the template page exists and is accessible.')
+                return
+            }
+        }
+
+        var sourceRecords = this._getSourceRecords(definition)
+        if (sourceRecords.length === 0) {
+            gs.addInfoMessage('No source records matched the condition. Nothing to publish.')
+            return
+        }
+
+        var successCount = 0
+        var errorCount = 0
+        var contentBuilder = new ContentBuilder()
+
+        for (var i = 0; i < sourceRecords.length; i++) {
+            var sourceGr = sourceRecords[i]
+            try {
+                var result = this._publishRecord(definition, config, spaceId, sourceGr, contentBuilder, contentStrategy, templateAdf, customAdf)
+                if (result.success) {
+                    successCount++
+                } else {
+                    errorCount++
+                }
+            } catch (e) {
+                errorCount++
+                this._logPublishRun(definitionSysId, sourceGr, 'create', 'error', 0, '', '', '', e.toString())
+            }
+        }
+
+        if (successCount > 0) {
+            gs.addInfoMessage('Successfully published ' + successCount + ' page(s) to Confluence.')
+        }
+        if (errorCount > 0) {
+            gs.addErrorMessage(errorCount + ' page(s) failed to publish. Check Publish Runs for details.')
+        }
+    },
+
+    /**
+     * Determine which content strategy to use based on configuration.
+     * @returns {object} { mode: 'template' | 'content_blocks' | 'custom_adf' }
+     */
+    _determineContentStrategy: function (definition, customAdf) {
+        // Priority 1: Custom ADF passed as parameter
+        if (customAdf && typeof customAdf === 'object' && customAdf.type === 'doc') {
+            return { mode: 'custom_adf' }
+        }
+
+        // Priority 2: Template page is configured
+        if (definition.template_page_id) {
+            return { mode: 'template' }
+        }
+
+        // Priority 3: Content blocks only (default)
+        return { mode: 'content_blocks' }
+    },
+
+    /**
+     * Build the ADF body for a single record based on the active content strategy.
+     */
+    _buildAdfBody: function (contentStrategy, definition, sourceGr, contentBuilder, templateAdf, customAdf) {
+        var definitionSysId = definition.sys_id
+
+        switch (contentStrategy.mode) {
+            case 'template':
+                // Build a map of content blocks keyed by name
+                var blockMap = contentBuilder.buildBlockMap(definitionSysId, sourceGr)
+                // Resolve the template: replace ${placeholder} with block output or field values
+                var resolvedDoc = contentBuilder.resolveTemplateDocument(templateAdf, blockMap, sourceGr)
+                return JSON.stringify(resolvedDoc)
+
+            case 'custom_adf':
+                // Deep-clone the custom ADF and resolve any ${field} placeholders in text nodes
+                var resolvedCustom = contentBuilder.resolveTemplateDocument(customAdf, {}, sourceGr)
+                return JSON.stringify(resolvedCustom)
+
+            case 'content_blocks':
+            default:
+                // Assemble all content blocks sequentially
+                var adfDoc = contentBuilder.buildDocument(definitionSysId, sourceGr)
+                return JSON.stringify(adfDoc)
+        }
+    },
+
+    _publishRecord: function (definition, config, spaceId, sourceGr, contentBuilder, contentStrategy, templateAdf, customAdf) {
+        var definitionSysId = definition.sys_id
+        var sourceSysId = sourceGr.getUniqueValue()
+        var sourceTable = sourceGr.getTableName()
+
+        var title = this._resolveTemplate(definition.title_template, sourceGr)
+        var adfBody = this._buildAdfBody(contentStrategy, definition, sourceGr, contentBuilder, templateAdf, customAdf)
+
+        var operation = this._determineOperation(definition, sourceGr, spaceId, title, config.cloud_id)
+
+        var response
+        if (operation.action === 'create') {
+            response = this._createPage(config.cloud_id, spaceId, title, adfBody, definition.parent_page_id)
+        } else if (operation.action === 'update') {
+            response = this._updatePage(config.cloud_id, operation.pageId, title, adfBody, operation.version, definition.version_message_template, sourceGr)
+        } else {
+            this._logPublishRun(definitionSysId, sourceGr, 'create', 'skipped', 0, '', '', '', 'Operation skipped based on mode/strategy')
+            return { success: true }
+        }
+
+        var httpStatus = response.statusCode
+        var responseBody = response.body
+
+        if (httpStatus >= 200 && httpStatus < 300) {
+            var respObj = JSON.parse(responseBody)
+            var pageId = respObj.id || ''
+            var pageUrl = respObj._links && respObj._links.base ? respObj._links.base + respObj._links.webui : ''
+            var version = respObj.version && respObj.version.number ? String(respObj.version.number) : '1'
+
+            this._upsertPageLink(sourceTable, sourceSysId, pageId, definitionSysId, version)
+            this._logPublishRun(definitionSysId, sourceGr, operation.action, 'success', httpStatus, pageId, pageUrl, version, '')
+            return { success: true }
+        } else {
+            var errorMsg = ''
+            try {
+                var errObj = JSON.parse(responseBody)
+                errorMsg = errObj.message || errObj.title || responseBody
+            } catch (e) {
+                errorMsg = responseBody
+            }
+
+            var requestPayload = operation.action === 'create'
+                ? JSON.stringify({ spaceId: spaceId, title: title })
+                : JSON.stringify({ pageId: operation.pageId, title: title })
+
+            this._logPublishRun(definitionSysId, sourceGr, operation.action, 'error', httpStatus, '', '', '', errorMsg, requestPayload)
+            return { success: false, error: errorMsg }
+        }
+    },
+
+    /**
+     * Fetch the ADF body of a Confluence template page.
+     * Uses the v2 API with body-format=atlas_doc_format to retrieve the page
+     * content as an ADF JSON document.
+     *
+     * @param {string} cloudId - Atlassian cloud ID
+     * @param {string} templatePageId - Confluence page ID of the template
+     * @returns {object|null} Parsed ADF document or null on failure
+     */
+    _fetchTemplateBody: function (cloudId, templatePageId) {
+        var url = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/api/v2/pages/' + templatePageId + '?body-format=atlas_doc_format'
+        gs.info('ConfluencePublisher._fetchTemplateBody: Fetching template page ' + templatePageId)
+
+        var response = this._makeRequest('GET', url, null)
+
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+            try {
+                var pageObj = JSON.parse(response.body)
+
+                // The body is in pageObj.body.atlas_doc_format.value (as a JSON string)
+                if (pageObj.body && pageObj.body.atlas_doc_format && pageObj.body.atlas_doc_format.value) {
+                    var adfDoc = JSON.parse(pageObj.body.atlas_doc_format.value)
+                    gs.info('ConfluencePublisher._fetchTemplateBody: Successfully parsed template ADF (' + (adfDoc.content ? adfDoc.content.length : 0) + ' top-level nodes)')
+                    return adfDoc
+                }
+
+                gs.error('ConfluencePublisher._fetchTemplateBody: Response missing body.atlas_doc_format.value - keys: ' + Object.keys(pageObj.body || {}).join(', '))
+            } catch (e) {
+                gs.error('ConfluencePublisher._fetchTemplateBody: Error parsing response - ' + e.toString())
+            }
+        } else {
+            gs.error('ConfluencePublisher._fetchTemplateBody: Failed to fetch template page - status=' + response.statusCode + ', body=' + (response.body || '').substring(0, 500))
+        }
+
+        return null
+    },
+
+    _determineOperation: function (definition, sourceGr, spaceId, title, cloudId) {
+        var mode = definition.mode
+        var strategy = definition.match_strategy
+        var sourceSysId = sourceGr.getUniqueValue()
+        var sourceTable = sourceGr.getTableName()
+
+        var existingPage = null
+
+        if (strategy === 'by_stored_page_id') {
+            var linkGr = new GlideRecord('x_1295779_conflu_0_page_link')
+            linkGr.addQuery('source_table', sourceTable)
+            linkGr.addQuery('source_id', sourceSysId)
+            linkGr.addQuery('publishing_definition', definition.sys_id)
+            linkGr.query()
+            if (linkGr.next()) {
+                var storedPageId = linkGr.getValue('confluence_page_id')
+                if (storedPageId) {
+                    var pageDetails = this._getPageDetails(cloudId, storedPageId)
+                    if (pageDetails) {
+                        existingPage = {
+                            pageId: storedPageId,
+                            version: pageDetails.version && pageDetails.version.number ? pageDetails.version.number : 1
+                        }
+                    }
+                }
+            }
+        } else if (strategy === 'by_title_in_space') {
+            var foundPage = this._findPageByTitle(cloudId, spaceId, title)
+            if (foundPage) {
+                existingPage = {
+                    pageId: foundPage.id,
+                    version: foundPage.version && foundPage.version.number ? foundPage.version.number : 1
+                }
+            }
+        }
+
+        if (mode === 'create') {
+            return existingPage ? { action: 'skip' } : { action: 'create' }
+        } else if (mode === 'update') {
+            return !existingPage ? { action: 'skip' } : { action: 'update', pageId: existingPage.pageId, version: existingPage.version }
+        } else {
+            return existingPage
+                ? { action: 'update', pageId: existingPage.pageId, version: existingPage.version }
+                : { action: 'create' }
+        }
+    },
+
+    _createPage: function (cloudId, spaceId, title, adfBody, parentPageId) {
+        var url = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/api/v2/pages'
+        var body = {
+            spaceId: spaceId,
+            status: 'current',
+            title: title,
+            body: { representation: 'atlas_doc_format', value: adfBody }
+        }
+        if (parentPageId) {
+            body.parentId = parentPageId
+        }
+        return this._makeRequest('POST', url, body)
+    },
+
+    _updatePage: function (cloudId, pageId, title, adfBody, currentVersion, versionMessageTemplate, sourceGr) {
+        var url = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/api/v2/pages/' + pageId
+        var versionMessage = versionMessageTemplate ? this._resolveTemplate(versionMessageTemplate, sourceGr) : 'Updated from ServiceNow'
+        var body = {
+            id: pageId,
+            status: 'current',
+            title: title,
+            body: { representation: 'atlas_doc_format', value: adfBody },
+            version: { number: currentVersion + 1, message: versionMessage }
+        }
+        return this._makeRequest('PUT', url, body)
+    },
+
+    _getSpaceId: function (cloudId, spaceKey, parentPageId) {
+        gs.info('ConfluencePublisher._getSpaceId: cloudId=' + cloudId + ', spaceKey=' + spaceKey + ', parentPageId=' + parentPageId)
+
+        // Attempt 1: v2 API with keys parameter
+        var url = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/api/v2/spaces?keys=' + encodeURIComponent(spaceKey)
+        gs.info('ConfluencePublisher._getSpaceId: v2 URL = ' + url)
+
+        var response = this._makeRequest('GET', url, null)
+        gs.info('ConfluencePublisher._getSpaceId: v2 response - status=' + response.statusCode + ', body=' + (response.body || '').substring(0, 1000))
+
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+            try {
+                var respObj = JSON.parse(response.body)
+                if (respObj.results && respObj.results.length > 0) {
+                    gs.info('ConfluencePublisher._getSpaceId: Found space via v2 - id=' + respObj.results[0].id)
+                    return respObj.results[0].id
+                }
+                gs.info('ConfluencePublisher._getSpaceId: v2 returned 200 but empty results array')
+            } catch (e) {
+                gs.error('ConfluencePublisher._getSpaceId: Error parsing v2 response - ' + e.toString())
+            }
+        }
+
+        // Attempt 2: Derive spaceId from the parent page (most reliable for personal spaces)
+        if (parentPageId) {
+            gs.info('ConfluencePublisher._getSpaceId: Trying to resolve spaceId from parent page: ' + parentPageId)
+            var pageUrl = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/api/v2/pages/' + parentPageId
+            var pageResponse = this._makeRequest('GET', pageUrl, null)
+            gs.info('ConfluencePublisher._getSpaceId: page lookup response - status=' + pageResponse.statusCode + ', body=' + (pageResponse.body || '').substring(0, 500))
+
+            if (pageResponse.statusCode >= 200 && pageResponse.statusCode < 300) {
+                try {
+                    var pageObj = JSON.parse(pageResponse.body)
+                    if (pageObj.spaceId) {
+                        gs.info('ConfluencePublisher._getSpaceId: Found spaceId from parent page - spaceId=' + pageObj.spaceId)
+                        return String(pageObj.spaceId)
+                    }
+                } catch (e) {
+                    gs.error('ConfluencePublisher._getSpaceId: Error parsing page response - ' + e.toString())
+                }
+            }
+        }
+
+        // Attempt 3: v1 API fallback
+        var v1Url = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/rest/api/space/' + encodeURIComponent(spaceKey)
+        gs.info('ConfluencePublisher._getSpaceId: v1 URL = ' + v1Url)
+
+        var v1Response = this._makeRequest('GET', v1Url, null)
+        gs.info('ConfluencePublisher._getSpaceId: v1 response - status=' + v1Response.statusCode + ', body=' + (v1Response.body || '').substring(0, 1000))
+
+        if (v1Response.statusCode >= 200 && v1Response.statusCode < 300) {
+            try {
+                var v1Obj = JSON.parse(v1Response.body)
+                if (v1Obj.id) {
+                    gs.info('ConfluencePublisher._getSpaceId: Found space via v1 - id=' + v1Obj.id)
+                    return String(v1Obj.id)
+                }
+            } catch (e) {
+                gs.error('ConfluencePublisher._getSpaceId: Error parsing v1 response - ' + e.toString())
+            }
+        }
+
+        gs.error('ConfluencePublisher._getSpaceId: ALL attempts failed. v2 status=' + response.statusCode + ', v1 status=' + v1Response.statusCode)
+        return null
+    },
+
+    _findPageByTitle: function (cloudId, spaceId, title) {
+        var url = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/api/v2/spaces/' + spaceId + '/pages?title=' + encodeURIComponent(title) + '&status=current'
+        var response = this._makeRequest('GET', url, null)
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+            try {
+                var respObj = JSON.parse(response.body)
+                if (respObj.results && respObj.results.length > 0) {
+                    return respObj.results[0]
+                }
+            } catch (e) { /* parse error */ }
+        }
+        return null
+    },
+
+    _getPageDetails: function (cloudId, pageId) {
+        var url = 'https://api.atlassian.com/ex/confluence/' + cloudId + '/wiki/api/v2/pages/' + pageId
+        var response = this._makeRequest('GET', url, null)
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+            try {
+                return JSON.parse(response.body)
+            } catch (e) { /* parse error */ }
+        }
+        return null
+    },
+
+    _makeRequest: function (method, url, body) {
+        try {
+            // Get a valid access token (with audience parameter for Atlassian)
+            var token = this._getAccessToken()
+            if (!token) {
+                gs.error('ConfluencePublisher._makeRequest: No access token available')
+                return { statusCode: 0, body: 'No access token available' }
+            }
+
+            var rm = new sn_ws.RESTMessageV2()
+            rm.setEndpoint(url)
+            rm.setHttpMethod(method)
+            rm.setRequestHeader('Authorization', 'Bearer ' + token)
+            rm.setRequestHeader('Content-Type', 'application/json')
+            rm.setRequestHeader('Accept', 'application/json')
+
+            if (body) {
+                rm.setRequestBody(JSON.stringify(body))
+            }
+
+            var response = rm.execute()
+            return {
+                statusCode: response.getStatusCode(),
+                body: response.getBody()
+            }
+        } catch (e) {
+            gs.error('ConfluencePublisher._makeRequest: Exception during execute() - ' + e.toString())
+            gs.error('ConfluencePublisher._makeRequest: URL was: ' + url + ', method: ' + method)
+            return {
+                statusCode: 0,
+                body: 'Exception: ' + e.toString()
+            }
+        }
+    },
+
+    /**
+     * Get an access token for the Atlassian API.
+     * Manually requests the token with the required 'audience' parameter
+     * that Atlassian needs to bind the token to a specific site.
+     * Caches the token for the lifetime of this instance.
+     */
+    _getAccessToken: function () {
+        if (this._accessToken) {
+            return this._accessToken
+        }
+
+        try {
+            // Read the OAuth entity to get client credentials
+            var entityGr = new GlideRecord('oauth_entity')
+            entityGr.addQuery('name', 'Confluence Publisher')
+            entityGr.addQuery('sys_scope', '179c1ee2932e075045f0f3255d03d65f')
+            entityGr.setLimit(1)
+            entityGr.query()
+
+            if (!entityGr.next()) {
+                gs.error('ConfluencePublisher._getAccessToken: Could not find OAuth entity')
+                return null
+            }
+
+            var clientId = entityGr.getValue('client_id')
+            var clientSecret = entityGr.getElement('client_secret').getDecryptedValue()
+            var tokenUrl = entityGr.getValue('token_url')
+
+            if (!clientId || !clientSecret || !tokenUrl) {
+                gs.error('ConfluencePublisher._getAccessToken: Missing client_id, client_secret, or token_url on OAuth entity')
+                return null
+            }
+
+            gs.info('ConfluencePublisher._getAccessToken: Requesting token from ' + tokenUrl + ' with audience=api.atlassian.com')
+
+            // Request token with the audience parameter (required by Atlassian)
+            var rm = new sn_ws.RESTMessageV2()
+            rm.setEndpoint(tokenUrl)
+            rm.setHttpMethod('POST')
+            rm.setRequestHeader('Content-Type', 'application/json')
+
+            var tokenBody = {
+                grant_type: 'client_credentials',
+                client_id: clientId,
+                client_secret: clientSecret,
+                audience: 'api.atlassian.com'
+            }
+            rm.setRequestBody(JSON.stringify(tokenBody))
+
+            var response = rm.execute()
+            var statusCode = response.getStatusCode()
+            var responseBody = response.getBody()
+
+            gs.info('ConfluencePublisher._getAccessToken: Token response status=' + statusCode)
+
+            if (statusCode >= 200 && statusCode < 300) {
+                var tokenObj = JSON.parse(responseBody)
+                if (tokenObj.access_token) {
+                    this._accessToken = tokenObj.access_token
+                    gs.info('ConfluencePublisher._getAccessToken: Successfully obtained access token')
+                    return this._accessToken
+                }
+                gs.error('ConfluencePublisher._getAccessToken: Token response missing access_token field')
+            } else {
+                gs.error('ConfluencePublisher._getAccessToken: Token request failed - status=' + statusCode + ', body=' + responseBody)
+            }
+
+            return null
+        } catch (e) {
+            gs.error('ConfluencePublisher._getAccessToken: Exception - ' + e.toString())
+            return null
+        }
+    },
+
+    _getOAuthProfileSysId: function () {
+        var gr = new GlideRecord('oauth_entity_profile')
+        gr.addQuery('oauth_entity.name', 'Confluence Publisher')
+        gr.addQuery('default', true)
+        gr.setLimit(1)
+        gr.query()
+
+        if (gr.next()) {
+            gs.info('ConfluencePublisher: Found OAuth profile: ' + gr.getValue('name') + ' (sys_id: ' + gr.getUniqueValue() + ')')
+            return gr.getUniqueValue()
+        }
+
+        gr = new GlideRecord('oauth_entity_profile')
+        gr.addQuery('oauth_entity.sys_scope', '179c1ee2932e075045f0f3255d03d65f')
+        gr.setLimit(1)
+        gr.query()
+
+        if (gr.next()) {
+            gs.info('ConfluencePublisher: Found OAuth profile via scope fallback: ' + gr.getValue('name') + ' (sys_id: ' + gr.getUniqueValue() + ')')
+            return gr.getUniqueValue()
+        }
+
+        gs.error('ConfluencePublisher: Could not find OAuth entity profile for Confluence Publisher')
+        return null
+    },
+
+    _getDefinition: function (definitionSysId) {
+        var gr = new GlideRecord('x_1295779_conflu_0_publishing_definition')
+        if (!gr.get(definitionSysId)) {
+            return null
+        }
+        return {
+            sys_id: definitionSysId,
+            name: gr.getValue('name') || '',
+            source_table: gr.getValue('source_table') || '',
+            target_space_key: gr.getValue('target_space_key') || '',
+            parent_page_id: gr.getValue('parent_page_id') || '',
+            template_page_id: gr.getValue('template_page_id') || '',
+            title_template: gr.getValue('title_template') || '',
+            mode: gr.getValue('mode') || 'upsert',
+            match_strategy: gr.getValue('match_strategy') || 'by_title_in_space',
+            version_message_template: gr.getValue('version_message_template') || '',
+            condition: gr.getValue('condition') || '',
+            active: gr.getValue('active') || 'false'
+        }
+    },
+
+    _getConnectionConfig: function () {
+        var gr = new GlideRecord('x_1295779_conflu_0_connection_config')
+        gr.setLimit(1)
+        gr.query()
+        if (gr.next()) {
+            return {
+                site_url: gr.getValue('site_url') || '',
+                default_space_key: gr.getValue('default_space_key') || '',
+                cloud_id: gr.getValue('cloud_id') || ''
+            }
+        }
+        return null
+    },
+
+    _getSourceRecords: function (definition) {
+        var records = []
+        var gr = new GlideRecord(definition.source_table)
+        if (definition.condition) {
+            gr.addEncodedQuery(definition.condition)
+        }
+        gr.query()
+        while (gr.next()) {
+            var clone = new GlideRecord(definition.source_table)
+            clone.get(gr.getUniqueValue())
+            records.push(clone)
+        }
+        return records
+    },
+
+    _upsertPageLink: function (sourceTable, sourceSysId, pageId, definitionSysId, version) {
+        var gr = new GlideRecord('x_1295779_conflu_0_page_link')
+        gr.addQuery('source_table', sourceTable)
+        gr.addQuery('source_id', sourceSysId)
+        gr.addQuery('publishing_definition', definitionSysId)
+        gr.query()
+        if (gr.next()) {
+            gr.setValue('confluence_page_id', pageId)
+            gr.setValue('last_published', new GlideDateTime())
+            gr.setValue('last_version', version)
+            gr.update()
+        } else {
+            gr.initialize()
+            gr.setValue('source_table', sourceTable)
+            gr.setValue('source_id', sourceSysId)
+            gr.setValue('confluence_page_id', pageId)
+            gr.setValue('publishing_definition', definitionSysId)
+            gr.setValue('last_published', new GlideDateTime())
+            gr.setValue('last_version', version)
+            gr.insert()
+        }
+    },
+
+    _logPublishRun: function (definitionSysId, sourceGr, operation, status, httpStatus, pageId, pageUrl, version, errorMessage, requestPayload) {
+        var gr = new GlideRecord('x_1295779_conflu_0_publish_run')
+        gr.initialize()
+        gr.setValue('publishing_definition', definitionSysId)
+        gr.setValue('source_table', sourceGr.getTableName())
+        gr.setValue('source_id', sourceGr.getUniqueValue())
+        gr.setValue('operation', operation)
+        gr.setValue('status', status)
+        gr.setValue('http_status', String(httpStatus || ''))
+        gr.setValue('page_id', pageId || '')
+        gr.setValue('page_url', pageUrl || '')
+        gr.setValue('version', version || '')
+        gr.setValue('error_message', errorMessage || '')
+        if (requestPayload) {
+            gr.setValue('request_payload', requestPayload)
+        }
+        gr.insert()
+    },
+
+    _resolveTemplate: function (template, sourceGr) {
+        if (!template || !sourceGr) {
+            return template || ''
+        }
+        return template.replace(/\$\{([^}]+)\}/g, function (match, fieldName) {
+            var trimmed = fieldName.trim()
+            return sourceGr.getDisplayValue(trimmed) || sourceGr.getValue(trimmed) || ''
+        })
+    },
+
+    type: 'ConfluencePublisher'
+}
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-16 15:18:42</sys_created_on>
+        <sys_id>c251d3a53e364afa8f0b83ccb8f6263d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>ConfluencePublisher</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_script_include_c251d3a53e364afa8f0b83ccb8f6263d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 16:04:47</sys_updated_on>
+    </sys_script_include>
+</record_update>

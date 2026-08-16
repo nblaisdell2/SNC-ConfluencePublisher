@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1295779_conflu_0.ContentBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Builds ADF page content using three strategies: (1) Template mode — fetches a Confluence template page and resolves ${placeholder} tokens with matching content block output or source record field values; (2) Content Blocks mode — assembles blocks sequentially into a full ADF document; (3) Provides buildBlockMap() for named block lookup used by template resolution. Supports block types: table, code, link, label, bullet_list, panel, status.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>ContentBuilder</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ContentBuilder = Class.create();
+ContentBuilder.prototype = {
+    initialize: function() {},
+
+    /**
+     * Build the full ADF document for a publishing definition and source record.
+     * Used in "Content Blocks Only" mode — assembles all blocks sequentially.
+     * @param {string} definitionSysId - sys_id of the publishing definition
+     * @param {GlideRecord} sourceRecord - the source GlideRecord to resolve dynamic content
+     * @returns {object} The assembled ADF document
+     */
+    buildDocument: function(definitionSysId, sourceRecord) {
+        var contentNodes = [];
+        var blocks = this._getContentBlocks(definitionSysId);
+
+        for (var i = 0; i < blocks.length; i++) {
+            var block = blocks[i];
+            var nodes = this._buildBlockNodes(block, sourceRecord);
+            for (var n = 0; n < nodes.length; n++) {
+                contentNodes.push(nodes[n]);
+            }
+        }
+
+        return {
+            type: 'doc',
+            version: 1,
+            content: contentNodes
+        };
+    },
+
+    /**
+     * Build a map of content block names to their generated ADF nodes.
+     * Used in "Template" mode — each block's output replaces the matching
+     * placeholder in the template.
+     * @param {string} definitionSysId
+     * @param {GlideRecord} sourceRecord
+     * @returns {object} Map of { blockName: [adfNodes] }
+     */
+    buildBlockMap: function(definitionSysId, sourceRecord) {
+        var blockMap = {};
+        var blocks = this._getContentBlocks(definitionSysId);
+
+        for (var i = 0; i < blocks.length; i++) {
+            var block = blocks[i];
+            var name = block.name;
+            if (name) {
+                blockMap[name] = this._buildBlockNodes(block, sourceRecord);
+            }
+        }
+
+        return blockMap;
+    },
+
+    /**
+     * Resolve a template ADF document by replacing ${placeholder} tokens.
+     *
+     * Resolution priority:
+     *   1. If a content block's name matches the placeholder, replace the
+     *      enclosing paragraph/node with that block's full ADF output.
+     *   2. Otherwise, resolve the placeholder as a source record field value
+     *      (display value preferred, falls back to raw value).
+     *
+     * @param {object} templateAdf - parsed ADF document from the template page
+     * @param {object} blockMap - map of { blockName: [adfNodes] } from buildBlockMap()
+     * @param {GlideRecord} sourceRecord - source record for field value resolution
+     * @returns {object} The resolved ADF document ready for publishing
+     */
+    resolveTemplateDocument: function(templateAdf, blockMap, sourceRecord) {
+        if (!templateAdf || templateAdf.type !== 'doc') {
+            return { type: 'doc', version: 1, content: [] };
+        }
+
+        var resolvedContent = this._resolveNodes(templateAdf.content || [], blockMap, sourceRecord);
+
+        return {
+            type: 'doc',
+            version: 1,
+            content: resolvedContent
+        };
+    },
+
+    /**
+     * Recursively resolve an array of ADF nodes.
+     * Top-level nodes containing a block placeholder are expanded;
+     * text-only placeholders are resolved inline.
+     */
+    _resolveNodes: function(nodes, blockMap, sourceRecord) {
+        var resolved = [];
+
+        for (var i = 0; i < nodes.length; i++) {
+            var node = nodes[i];
+            var blockExpansion = this._tryBlockExpansion(node, blockMap, sourceRecord);
+
+            if (blockExpansion !== null) {
+                // The node contained a block-level placeholder — expand it
+                for (var b = 0; b < blockExpansion.length; b++) {
+                    resolved.push(blockExpansion[b]);
+                }
+            } else {
+                // No block-level expansion — resolve inline placeholders
+                resolved.push(this._resolveInlineNode(node, blockMap, sourceRecord));
+            }
+        }
+
+        return resolved;
+    },
+
+    /**
+     * Check if a node contains a block-level placeholder (a placeholder whose
+     * name matches a content block). If so, return the block's ADF nodes.
+     * Returns null if no block-level expansion applies.
+     *
+     * A block-level placeholder is one where:
+     * - The node is a paragraph (or heading) containing text with ${blockName}
+     * - The blockName exists in the blockMap
+     * - The placeholder is the ONLY meaningful content in that paragraph
+     *   (i.e., the paragraph is essentially just the placeholder, possibly
+     *   with surrounding whitespace)
+     */
+    _tryBlockExpansion: function(node, blockMap, sourceRecord) {
+        if (!node || !node.content) {
+            return null;
+        }
+
+        // Only expand block-level for paragraphs and headings
+        if (node.type !== 'paragraph' && node.type !== 'heading') {
+            return null;
+        }
+
+        // Collect all text in this node to check for a standalone block placeholder
+        var fullText = this._extractText(node);
+        var placeholders = this._findPlaceholders(fullText);
+
+        // Check if any placeholder matches a block name
+        for (var p = 0; p < placeholders.length; p++) {
+            var name = placeholders[p];
+            if (blockMap[name]) {
+                // Check if this is a "standalone" placeholder paragraph
+                // A paragraph with ONLY block placeholders (and simple field
+                // placeholders or text around them) gets fully replaced
+                // by the block output.
+                //
+                // If the paragraph has mixed content (block placeholder + other
+                // significant text that ISN'T just another placeholder), we
+                // still expand the block but preserve surrounding text.
+                var trimmed = fullText.replace(/\$\{[^}]+\}/g, '').trim();
+                if (trimmed === '' || trimmed.replace(/[\s\-:,]/g, '') === '') {
+                    // Paragraph is essentially just placeholders — full expansion
+                    var expandedNodes = [];
+                    for (var pp = 0; pp < placeholders.length; pp++) {
+                        var pName = placeholders[pp];
+                        if (blockMap[pName]) {
+                            var blockNodes = blockMap[pName];
+                            for (var bn = 0; bn < blockNodes.length; bn++) {
+                                expandedNodes.push(blockNodes[bn]);
+                            }
+                        } else {
+                            // Non-block placeholder — resolve as field value paragraph
+                            var fieldVal = this._resolveFieldValue(pName, sourceRecord);
+                            expandedNodes.push({
+                                type: 'paragraph',
+                                content: [{ type: 'text', text: fieldVal }]
+                            });
+                        }
+                    }
+                    return expandedNodes;
+                }
+            }
+        }
+
+        return null;
+    },
+
+    /**
+     * Resolve inline placeholders within a node (deep clone with text replacement).
+     * Block-level nodes that weren't expanded get their text placeholders
+     * resolved as field values.
+     */
+    _resolveInlineNode: function(node, blockMap, sourceRecord) {
+        if (!node) {
+            return node;
+        }
+
+        // Text leaf node — resolve field placeholders
+        if (node.type === 'text') {
+            var resolvedText = this._resolveTemplatePlaceholders(node.text || '', blockMap, sourceRecord);
+            var clone = { type: 'text', text: resolvedText };
+            if (node.marks) {
+                clone.marks = node.marks;
+            }
+            return clone;
+        }
+
+        // Recursive: node has children
+        var resolved = { type: node.type };
+
+        // Copy attributes
+        if (node.attrs) {
+            resolved.attrs = node.attrs;
+        }
+        if (node.marks) {
+            resolved.marks = node.marks;
+        }
+
+        // Recursively resolve child content
+        if (node.content && node.content.length > 0) {
+            resolved.content = [];
+            for (var i = 0; i < node.content.length; i++) {
+                resolved.content.push(this._resolveInlineNode(node.content[i], blockMap, sourceRecord));
+            }
+        }
+
+        return resolved;
+    },
+
+    /**
+     * Replace ${placeholder} patterns in a text string.
+     * If the placeholder matches a block name AND the block produces a single
+     * text-compatible output, inline it. Otherwise resolve as a field value.
+     */
+    _resolveTemplatePlaceholders: function(text, blockMap, sourceRecord) {
+        var self = this;
+        return text.replace(/\$\{([^}]+)\}/g, function(match, placeholder) {
+            var trimmed = placeholder.trim();
+
+            // Check if it's a block that produces simple text output
+            if (blockMap[trimmed]) {
+                var blockNodes = blockMap[trimmed];
+                // If block is a single paragraph with a single text node, inline it
+                if (blockNodes.length === 1 && blockNodes[0].type === 'paragraph' &&
+                    blockNodes[0].content && blockNodes[0].content.length === 1 &&
+                    blockNodes[0].content[0].type === 'text') {
+                    return blockNodes[0].content[0].text;
+                }
+                // Complex block — can't inline in text, use display representation
+                return '[Block: ' + trimmed + ']';
+            }
+
+            // Resolve as record field value
+            return self._resolveFieldValue(trimmed, sourceRecord);
+        });
+    },
+
+    /**
+     * Get a field's display value or raw value from the source record.
+     */
+    _resolveFieldValue: function(fieldName, sourceRecord) {
+        if (!sourceRecord) {
+            return '';
+        }
+        return sourceRecord.getDisplayValue(fieldName) || sourceRecord.getValue(fieldName) || '';
+    },
+
+    /**
+     * Extract all text content from a node (flattened).
+     */
+    _extractText: function(node) {
+        if (!node) {
+            return '';
+        }
+        if (node.type === 'text') {
+            return node.text || '';
+        }
+        var text = '';
+        if (node.content) {
+            for (var i = 0; i < node.content.length; i++) {
+                text += this._extractText(node.content[i]);
+            }
+        }
+        return text;
+    },
+
+    /**
+     * Find all ${placeholder} names in a text string.
+     */
+    _findPlaceholders: function(text) {
+        var placeholders = [];
+        var regex = /\$\{([^}]+)\}/g;
+        var match;
+        while ((match = regex.exec(text)) !== null) {
+            placeholders.push(match[1].trim());
+        }
+        return placeholders;
+    },
+
+    // =====================================================================
+    // Content Block Assembly (unchanged core logic)
+    // =====================================================================
+
+    /**
+     * Read all content blocks for a publishing definition, ordered by creation.
+     * @param {string} definitionSysId
+     * @returns {Array} array of block objects
+     */
+    _getContentBlocks: function(definitionSysId) {
+        var blocks = [];
+        var gr = new GlideRecord('x_1295779_conflu_0_content_block');
+        gr.addQuery('publishing_definition', definitionSysId);
+        gr.orderBy('sys_created_on');
+        gr.query();
+
+        while (gr.next()) {
+            blocks.push({
+                type: gr.getValue('type') || '',
+                name: gr.getValue('name') || '',
+                source_table: gr.getValue('source_table') || '',
+                source_query: gr.getValue('source_query') || '',
+                columns: gr.getValue('columns') || '',
+                column_labels: gr.getValue('column_labels') || '',
+                max_rows: parseInt(gr.getValue('max_rows') || '50', 10),
+                static_value: gr.getValue('static_value') || '',
+                script: gr.getValue('script') || '',
+                code_source_field: gr.getValue('code_source_field') || '',
+                code_language: gr.getValue('code_language') || ''
+            });
+        }
+
+        return blocks;
+    },
+
+    /**
+     * Dispatch to the appropriate builder based on block type.
+     * @param {object} block
+     * @param {GlideRecord} sourceRecord
+     * @returns {Array} array of ADF nodes
+     */
+    _buildBlockNodes: function(block, sourceRecord) {
+        switch (block.type) {
+            case 'table':
+                return this._buildTableNode(block, sourceRecord);
+            case 'code':
+                return this._buildCodeNode(block, sourceRecord);
+            case 'link':
+                return this._buildLinkNode(block, sourceRecord);
+            case 'label':
+                return this._buildLabelNode(block, sourceRecord);
+            case 'bullet_list':
+                return this._buildBulletListNode(block, sourceRecord);
+            case 'panel':
+                return this._buildPanelNode(block, sourceRecord);
+            case 'status':
+                return this._buildStatusNode(block, sourceRecord);
+            default:
+                return [];
+        }
+    },
+
+    /**
+     * Build a table ADF node from a content block.
+     */
+    _buildTableNode: function(block, sourceRecord) {
+        var columns = block.columns ? block.columns.split(',') : [];
+        var labels = block.column_labels ? block.column_labels.split(',') : columns;
+
+        if (columns.length === 0) {
+            return [];
+        }
+
+        var rows = [];
+
+        // Header row
+        var headerCells = [];
+        for (var h = 0; h < labels.length; h++) {
+            headerCells.push({
+                type: 'tableHeader',
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: labels[h].trim() }] }]
+            });
+        }
+        rows.push({ type: 'tableRow', content: headerCells });
+
+        // Data rows - query from source_table or use the sourceRecord's table
+        var tableName = block.source_table || sourceRecord.getTableName();
+        var gr = new GlideRecord(tableName);
+        if (block.source_query) {
+            gr.addEncodedQuery(this._resolveTemplate(block.source_query, sourceRecord));
+        }
+        gr.setLimit(block.max_rows);
+        gr.query();
+
+        while (gr.next()) {
+            var dataCells = [];
+            for (var c = 0; c < columns.length; c++) {
+                var val = gr.getDisplayValue(columns[c].trim()) || '';
+                dataCells.push({
+                    type: 'tableCell',
+                    content: [{ type: 'paragraph', content: [{ type: 'text', text: val }] }]
+                });
+            }
+            rows.push({ type: 'tableRow', content: dataCells });
+        }
+
+        return [{ type: 'table', content: rows }];
+    },
+
+    /**
+     * Build a code block ADF node.
+     */
+    _buildCodeNode: function(block, sourceRecord) {
+        var codeText = '';
+        if (block.code_source_field && sourceRecord) {
+            codeText = sourceRecord.getValue(block.code_source_field) || '';
+        } else if (block.static_value) {
+            codeText = block.static_value;
+        }
+
+        var language = block.code_language || 'none';
+
+        return [{
+            type: 'codeBlock',
+            attrs: { language: language },
+            content: [{ type: 'text', text: codeText }]
+        }];
+    },
+
+    /**
+     * Build a link paragraph ADF node.
+     */
+    _buildLinkNode: function(block, sourceRecord) {
+        var linkText = this._resolveTemplate(block.static_value, sourceRecord) || 'Link';
+        // If static_value contains URL format "text|url", split it
+        var parts = linkText.split('|');
+        var text = parts[0].trim();
+        var url = parts.length > 1 ? parts[1].trim() : text;
+
+        return [{
+            type: 'paragraph',
+            content: [{
+                type: 'text',
+                text: text,
+                marks: [{ type: 'link', attrs: { href: url } }]
+            }]
+        }];
+    },
+
+    /**
+     * Build a label/paragraph ADF node.
+     */
+    _buildLabelNode: function(block, sourceRecord) {
+        var text = this._resolveTemplate(block.static_value, sourceRecord) || '';
+        return [{
+            type: 'paragraph',
+            content: [{ type: 'text', text: text }]
+        }];
+    },
+
+    /**
+     * Build a bullet list ADF node.
+     */
+    _buildBulletListNode: function(block, sourceRecord) {
+        var items = [];
+        if (block.static_value) {
+            // Static value: newline-separated list items
+            var lines = this._resolveTemplate(block.static_value, sourceRecord).split('\n');
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].trim();
+                if (line) {
+                    items.push({
+                        type: 'listItem',
+                        content: [{ type: 'paragraph', content: [{ type: 'text', text: line }] }]
+                    });
+                }
+            }
+        } else if (block.source_table && block.columns) {
+            // Dynamic: query records and use first column as list item text
+            var col = block.columns.split(',')[0].trim();
+            var gr = new GlideRecord(block.source_table);
+            if (block.source_query) {
+                gr.addEncodedQuery(this._resolveTemplate(block.source_query, sourceRecord));
+            }
+            gr.setLimit(block.max_rows);
+            gr.query();
+            while (gr.next()) {
+                items.push({
+                    type: 'listItem',
+                    content: [{ type: 'paragraph', content: [{ type: 'text', text: gr.getDisplayValue(col) || '' }] }]
+                });
+            }
+        }
+
+        if (items.length === 0) {
+            return [];
+        }
+
+        return [{ type: 'bulletList', content: items }];
+    },
+
+    /**
+     * Build a panel ADF node.
+     */
+    _buildPanelNode: function(block, sourceRecord) {
+        var text = this._resolveTemplate(block.static_value, sourceRecord) || '';
+        var panelType = block.code_language || 'info'; // reuse code_language for panel type
+
+        return [{
+            type: 'panel',
+            attrs: { panelType: panelType },
+            content: [{ type: 'paragraph', content: [{ type: 'text', text: text }] }]
+        }];
+    },
+
+    /**
+     * Build a status badge ADF node.
+     */
+    _buildStatusNode: function(block, sourceRecord) {
+        var text = this._resolveTemplate(block.static_value, sourceRecord) || 'Status';
+        var color = block.code_language || 'neutral'; // reuse code_language for status color
+
+        return [{
+            type: 'paragraph',
+            content: [{
+                type: 'status',
+                attrs: { text: text, color: color }
+            }]
+        }];
+    },
+
+    /**
+     * Resolve ${field_name} placeholders in a template string using source record values.
+     * @param {string} template
+     * @param {GlideRecord} sourceRecord
+     * @returns {string}
+     */
+    _resolveTemplate: function(template, sourceRecord) {
+        if (!template || !sourceRecord) {
+            return template || '';
+        }
+
+        return template.replace(/\$\{([^}]+)\}/g, function(match, fieldName) {
+            var trimmed = fieldName.trim();
+            return sourceRecord.getDisplayValue(trimmed) || sourceRecord.getValue(trimmed) || '';
+        });
+    },
+
+    type: 'ContentBuilder'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-16 15:18:41</sys_created_on>
+        <sys_id>42e60feee4c5448a82e4bd71bb06e18d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ContentBuilder</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_script_include_42e60feee4c5448a82e4bd71bb06e18d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 15:18:41</sys_updated_on>
+    </sys_script_include>
+</record_update>

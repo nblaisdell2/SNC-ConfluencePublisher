@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>template_page_id</element>
             <help/>
-            <hint/>
+            <hint>Optional Confluence page ID used as a structural template — placeholders in the template are replaced by matching content block output or source record field values</hint>
             <label>Template Page ID</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>source_id</element>
             <help/>
-            <hint/>
+            <hint>Sys_id of the record being published</hint>
             <label>Source ID</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publish_run</name>

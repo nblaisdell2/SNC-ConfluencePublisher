@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>columns</element>
             <help/>
-            <hint/>
+            <hint>Comma-separated field names for table-type blocks (e.g. number,state)</hint>
             <label>Columns</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

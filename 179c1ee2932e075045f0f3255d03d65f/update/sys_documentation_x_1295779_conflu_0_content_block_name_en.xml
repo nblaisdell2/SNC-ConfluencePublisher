@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>name</element>
             <help/>
-            <hint/>
+            <hint>A descriptive label to identify this content block</hint>
             <label>Name</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

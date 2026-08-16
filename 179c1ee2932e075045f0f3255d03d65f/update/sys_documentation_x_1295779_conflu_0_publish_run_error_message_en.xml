@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>error_message</element>
             <help/>
-            <hint/>
+            <hint>Error details when status is Error — API response or exception text</hint>
             <label>Error Message</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publish_run</name>

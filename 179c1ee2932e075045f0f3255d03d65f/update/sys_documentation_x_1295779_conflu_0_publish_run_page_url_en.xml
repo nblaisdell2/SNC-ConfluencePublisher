@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>page_url</element>
             <help/>
-            <hint/>
+            <hint>Direct link to the Confluence page for quick verification</hint>
             <label>Page URL</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publish_run</name>

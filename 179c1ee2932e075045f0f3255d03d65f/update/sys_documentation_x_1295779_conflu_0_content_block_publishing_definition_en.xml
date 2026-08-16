@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>publishing_definition</element>
             <help/>
-            <hint/>
+            <hint>The parent definition this block belongs to</hint>
             <label>Publishing Definition</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

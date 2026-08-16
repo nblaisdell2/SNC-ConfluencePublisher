@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>type</element>
             <help/>
-            <hint/>
+            <hint>The Confluence rendering format: table, code, link, label, list, panel, or status</hint>
             <label>Type</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>request_payload</element>
             <help/>
-            <hint/>
+            <hint>Full JSON body sent to the Confluence API (for debugging)</hint>
             <label>Request Payload</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publish_run</name>

@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>mode</element>
             <help/>
-            <hint/>
+            <hint>Create = always new page, Update = only existing, Upsert = create or update</hint>
             <label>Mode</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

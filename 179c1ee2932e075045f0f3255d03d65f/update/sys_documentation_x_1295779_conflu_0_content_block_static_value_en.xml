@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>static_value</element>
             <help/>
-            <hint/>
+            <hint>Fixed text for label, link URL, or status badge value</hint>
             <label>Static Value</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

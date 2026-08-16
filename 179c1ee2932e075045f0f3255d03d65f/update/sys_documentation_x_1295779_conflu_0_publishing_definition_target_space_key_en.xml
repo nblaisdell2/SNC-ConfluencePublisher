@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>target_space_key</element>
             <help/>
-            <hint/>
+            <hint>Confluence space key where pages will be created (e.g. ENG, ITSM)</hint>
             <label>Target Space Key</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

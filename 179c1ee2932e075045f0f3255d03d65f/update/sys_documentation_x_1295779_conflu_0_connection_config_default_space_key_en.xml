@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>default_space_key</element>
             <help/>
-            <hint>Optional fallback space key</hint>
+            <hint>Fallback space key when a definition does not specify one</hint>
             <label>Default Space Key</label>
             <language>en</language>
             <name>x_1295779_conflu_0_connection_config</name>

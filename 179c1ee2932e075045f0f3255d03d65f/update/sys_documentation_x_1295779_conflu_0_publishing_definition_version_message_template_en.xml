@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>version_message_template</element>
             <help/>
-            <hint/>
+            <hint>Comment added to Confluence page version history on each update</hint>
             <label>Version Message Template</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

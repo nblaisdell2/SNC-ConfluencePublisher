@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>last_published</element>
             <help/>
-            <hint/>
+            <hint>Timestamp of the most recent successful publish for this link</hint>
             <label>Last Published</label>
             <language>en</language>
             <name>x_1295779_conflu_0_page_link</name>

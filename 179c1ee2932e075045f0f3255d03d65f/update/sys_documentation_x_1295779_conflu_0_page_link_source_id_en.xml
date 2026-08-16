@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>source_id</element>
             <help/>
-            <hint/>
+            <hint>Sys_id of the ServiceNow record that was published</hint>
             <label>Source ID</label>
             <language>en</language>
             <name>x_1295779_conflu_0_page_link</name>

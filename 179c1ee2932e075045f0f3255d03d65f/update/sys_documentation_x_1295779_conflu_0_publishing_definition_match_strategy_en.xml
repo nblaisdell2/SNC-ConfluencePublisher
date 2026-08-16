@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>match_strategy</element>
             <help/>
-            <hint/>
+            <hint>How to find an existing Confluence page for updates</hint>
             <label>Match Strategy</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

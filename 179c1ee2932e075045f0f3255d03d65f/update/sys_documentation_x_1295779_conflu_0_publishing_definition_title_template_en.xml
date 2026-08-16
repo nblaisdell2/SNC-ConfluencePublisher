@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>title_template</element>
             <help/>
-            <hint/>
+            <hint>Template for page titles using ${field_name} placeholders from the source record</hint>
             <label>Title Template</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publishing_definition</name>

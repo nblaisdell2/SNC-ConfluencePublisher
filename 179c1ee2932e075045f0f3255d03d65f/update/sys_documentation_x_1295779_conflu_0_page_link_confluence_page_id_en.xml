@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>confluence_page_id</element>
             <help/>
-            <hint/>
+            <hint>Numeric page ID returned by the Confluence API after creation</hint>
             <label>Confluence Page ID</label>
             <language>en</language>
             <name>x_1295779_conflu_0_page_link</name>

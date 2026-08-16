@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>operation</element>
             <help/>
-            <hint/>
+            <hint>Whether this run created a new page or updated an existing one</hint>
             <label>Operation</label>
             <language>en</language>
             <name>x_1295779_conflu_0_publish_run</name>

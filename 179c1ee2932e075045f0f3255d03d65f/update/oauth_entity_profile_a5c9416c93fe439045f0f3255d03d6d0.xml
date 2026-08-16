@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity_profile">
+    <oauth_entity_profile action="INSERT_OR_UPDATE">
+        <default>true</default>
+        <grant_type>client_credentials</grant_type>
+        <jwt_provider/>
+        <name>Confluence Publisher default_profile</name>
+        <oauth_entity display_value="Confluence Publisher">073449e093fe439045f0f3255d03d6b6</oauth_entity>
+        <oauth_resources/>
+        <saml2_assertion_producer/>
+        <sys_class_name>oauth_entity_profile</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-16 00:44:15</sys_created_on>
+        <sys_id>a5c9416c93fe439045f0f3255d03d6d0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Confluence Publisher default_profile</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>oauth_entity_profile_a5c9416c93fe439045f0f3255d03d6d0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 01:28:05</sys_updated_on>
+    </oauth_entity_profile>
+</record_update>

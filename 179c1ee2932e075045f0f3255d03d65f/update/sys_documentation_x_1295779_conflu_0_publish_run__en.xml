@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Publish Run" language="en" table="x_1295779_conflu_0_publish_run">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Publish Run</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_publish_run</name>
+            <plural>Publish Runs</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 02:09:01</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Publish Run</sys_name>
+            <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+            <sys_update_name>sys_documentation_x_1295779_conflu_0_publish_run__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 02:09:01</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

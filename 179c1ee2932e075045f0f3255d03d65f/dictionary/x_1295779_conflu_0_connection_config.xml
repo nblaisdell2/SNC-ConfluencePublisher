@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a3c7fdbc3767453f8d2b115a00ccc6bc" label="Connection Config" name="x_1295779_conflu_0_connection_config" type="collection">
+        <element hint="Confluence Cloud site URL, e.g. https://acme.atlassian.net" label="Site URL" mandatory="true" max_length="1024" name="site_url" type="url"/>
+        <element hint="Optional fallback space key" label="Default Space Key" max_length="40" name="default_space_key" type="string"/>
+        <element hint="Populated by the Discover Cloud ID action" label="Cloud ID" max_length="100" name="cloud_id" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="fc78739b2c8e4ce6b0191df5f7232e47" label="Page Link" name="x_1295779_conflu_0_page_link" type="collection">
+        <element label="Last Version" max_length="40" name="last_version" type="integer"/>
+        <element label="Publishing Definition" max_length="32" name="publishing_definition" reference="x_1295779_conflu_0_publishing_definition" type="reference"/>
+        <element label="Last Published" max_length="40" name="last_published" type="glide_date_time"/>
+        <element label="Confluence Page ID" max_length="40" name="confluence_page_id" type="string"/>
+        <element label="Source Table" max_length="80" name="source_table" type="string"/>
+        <element label="Source ID" max_length="32" name="source_id" type="string"/>
+        <index name="index">
+            <element name="publishing_definition"/>
+        </index>
+    </element>
+</database>

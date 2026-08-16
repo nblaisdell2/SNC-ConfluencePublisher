@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="55b31ace44f4404f8907360a652836be" label="Publish Run" name="x_1295779_conflu_0_publish_run" type="collection">
+        <element label="Version" max_length="40" name="version" type="integer"/>
+        <element label="Request Payload" max_length="65000" name="request_payload" type="string"/>
+        <element label="Operation" max_length="40" name="operation" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Create" sequence="1" value="create"/>
+                <element inactive_on_update="false" label="Update" sequence="2" value="update"/>
+            </choice>
+        </element>
+        <element label="Source ID" max_length="32" name="source_id" type="string"/>
+        <element label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Error" sequence="2" value="error"/>
+                <element inactive_on_update="false" label="Retried" sequence="4" value="retried"/>
+                <element inactive_on_update="false" label="Skipped" sequence="3" value="skipped"/>
+                <element inactive_on_update="false" label="Success" sequence="1" value="success"/>
+            </choice>
+        </element>
+        <element label="Publishing Definition" max_length="32" name="publishing_definition" reference="x_1295779_conflu_0_publishing_definition" type="reference"/>
+        <element label="Page URL" max_length="1024" name="page_url" type="url"/>
+        <element label="Page ID" max_length="40" name="page_id" type="string"/>
+        <element label="Source Table" max_length="80" name="source_table" type="string"/>
+        <element label="HTTP Status" max_length="40" name="http_status" type="integer"/>
+        <element label="Error Message" max_length="4000" name="error_message" type="string"/>
+        <index name="index">
+            <element name="publishing_definition"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="code_language" table="x_1295779_conflu_0_content_block" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>code_language</element>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:32:40</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>code_language</sys_name>
+            <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+            <sys_update_name>sys_choice_x_1295779_conflu_0_content_block_code_language</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:32:40</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>JavaScript</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>javascript</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>TypeScript</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>typescript</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>JSX</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>jsx</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>TSX</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>tsx</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>JSON</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>json</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>JSON5</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>json5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>XML</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>xml</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>YAML</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>yaml</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SQL</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>9</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>sql</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>HTML / Markup</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>html/markup</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>CSS</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>11</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>css</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SCSS</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>12</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>scss</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Less</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>13</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>less</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Java</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>14</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>java</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>C#</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>15</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>csharp</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>C++</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>16</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>cpp</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>C</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>17</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>c</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Python</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>18</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>python</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Ruby</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>19</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>ruby</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PHP</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>20</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>php</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Go</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>21</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>go</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Rust</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>22</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>rust</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Kotlin</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>23</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>kotlin</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Swift</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>24</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>swift</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Scala</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>25</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>scala</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Perl</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>26</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>perl</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Bash</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>27</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>bash</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Shell Session</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>28</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>shell-session</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PowerShell</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>29</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>powershell</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Batch</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>30</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>batch</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Docker</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>31</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>docker</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Nginx</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>32</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>nginx</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Apache Conf</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>33</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>apacheconf</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>GraphQL</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>34</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>graphql</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Markdown</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>35</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>markdown</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Diff</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>36</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>diff</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>INI</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>37</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>ini</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>TOML</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>38</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>toml</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Properties</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>39</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>properties</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Makefile</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>40</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>makefile</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Regex</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>41</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>regex</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>HTTP</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>42</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>http</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Log</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>43</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>log</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Mermaid</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>44</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>mermaid</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PL/SQL</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>45</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>plsql</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Groovy</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>46</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>groovy</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Dart</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>47</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>dart</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Elixir</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>48</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>elixir</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Erlang</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>49</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>erlang</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Haskell</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>50</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>haskell</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Lua</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>51</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>lua</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>R</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>52</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>r</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MATLAB</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>53</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>matlab</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>VB.NET</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>54</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>vbnet</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Visual Basic</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>55</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>visual-basic</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Objective-C</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>56</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>objectivec</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PlantUML</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>57</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>plant-uml</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>HCL (Terraform)</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>58</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>hcl (Terraform)</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Gradle</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>59</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:12</sys_updated_on>
+            <value>gradle</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Solidity</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>60</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
+            <value>solidity</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>WebAssembly</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>61</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
+            <value>wasm</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>code_language</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Text</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence>62</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
+            <value>text</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

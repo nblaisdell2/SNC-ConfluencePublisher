@@ -20,18 +20,37 @@
             <element>type</element>
             <hint/>
             <inactive>false</inactive>
+            <label>Script</label>
+            <language>en</language>
+            <name>x_1295779_conflu_0_content_block</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
+            <value>script</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
             <label>Table</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>
             <sequence>1</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-10 02:57:15</sys_created_on>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-10 02:57:15</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
             <value>table</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -45,12 +64,12 @@
             <sequence>2</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-10 02:57:16</sys_created_on>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-10 02:57:16</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
             <value>code</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -64,12 +83,12 @@
             <sequence>3</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-10 02:57:16</sys_created_on>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-10 02:57:16</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
             <value>link</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -83,12 +102,12 @@
             <sequence>4</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-10 02:57:17</sys_created_on>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-10 02:57:17</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
             <value>label</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -102,12 +121,12 @@
             <sequence>5</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-10 02:57:17</sys_created_on>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-10 02:57:17</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
             <value>bullet_list</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -121,12 +140,12 @@
             <sequence>6</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-10 02:57:17</sys_created_on>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-10 02:57:17</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
             <value>panel</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -140,12 +159,12 @@
             <sequence>7</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-10 02:57:17</sys_created_on>
+            <sys_created_on>2026-08-17 16:46:13</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-10 02:57:17</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:46:13</sys_updated_on>
             <value>status</value>
         </sys_choice>
     </sys_choice>

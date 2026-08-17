@@ -3,7 +3,7 @@
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>code_language</element>
             <help/>
-            <hint>Syntax highlighting language (e.g. javascript, python, sql)</hint>
+            <hint>ADF-compliant syntax highlighting language for code snippet blocks in Confluence</hint>
             <label>Code Language</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>

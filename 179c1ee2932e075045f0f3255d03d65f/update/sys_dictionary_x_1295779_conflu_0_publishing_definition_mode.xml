@@ -2,10 +2,10 @@
     <sys_dictionary action="INSERT_OR_UPDATE" element="mode" table="x_1295779_conflu_0_publishing_definition">
         <active>true</active>
         <array>false</array>
-        <attributes>edge_encryption_enabled=true</attributes>
+        <attributes/>
         <audit>false</audit>
         <calculation/>
-        <choice>3</choice>
+        <choice/>
         <choice_field/>
         <choice_table/>
         <column_label>Mode</column_label>

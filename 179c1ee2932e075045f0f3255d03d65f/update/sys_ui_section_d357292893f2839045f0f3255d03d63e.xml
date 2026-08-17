@@ -1,44 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="d357292893f2839045f0f3255d03d63e" sys_domain="global" table="x_1295779_conflu_0_connection_config" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>cloud_id</element>
+            <element>name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-16 02:53:38</sys_created_on>
-            <sys_id>2467a96893f2839045f0f3255d03d6cf</sys_id>
+            <sys_created_on>2026-08-17 17:21:45</sys_created_on>
+            <sys_id>07a7718183f2c710c9389650ceaad331</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-16 02:53:38</sys_updated_on>
+            <sys_updated_on>2026-08-17 17:21:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cloud_id</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 17:21:45</sys_created_on>
+            <sys_id>0ba7718183f2c710c9389650ceaad332</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 17:21:45</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>default_space_key</element>
-            <position>1</position>
+            <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-16 02:53:38</sys_created_on>
-            <sys_id>f867a96893f2839045f0f3255d03d6d0</sys_id>
+            <sys_created_on>2026-08-17 17:21:45</sys_created_on>
+            <sys_id>c3a7718183f2c710c9389650ceaad333</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-16 02:53:38</sys_updated_on>
+            <sys_updated_on>2026-08-17 17:21:45</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>site_url</element>
-            <position>2</position>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-16 02:53:38</sys_created_on>
-            <sys_id>7867a96893f2839045f0f3255d03d6d1</sys_id>
+            <sys_created_on>2026-08-17 17:21:45</sys_created_on>
+            <sys_id>8fa7718183f2c710c9389650ceaad333</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-16 02:53:38</sys_updated_on>
+            <sys_updated_on>2026-08-17 17:21:45</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

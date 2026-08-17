@@ -4,13 +4,13 @@
             <element>static_value</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>f397a58d8332c710c9389650ceaad378</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>522b61c58372c710c9389650ceaad300</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>source_table</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>bf97a58d8332c710c9389650ceaad378</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>1e2b61c58372c710c9389650ceaad300</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,111 +32,125 @@
             <element>source_query</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>7b97a58d8332c710c9389650ceaad379</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>d62b61c58372c710c9389650ceaad301</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>script</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>922b61c58372c710c9389650ceaad302</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>3797a58d8332c710c9389650ceaad37a</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>5e2b61c58372c710c9389650ceaad302</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>columns</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>ff97a58d8332c710c9389650ceaad37a</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>1a2b61c58372c710c9389650ceaad303</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>column_labels</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>bb97a58d8332c710c9389650ceaad37b</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>d22b61c58372c710c9389650ceaad304</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>code_language</element>
-            <position>6</position>
+            <position>7</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>7797a58d8332c710c9389650ceaad37c</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>9e2b61c58372c710c9389650ceaad304</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>7</position>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>3397a58d8332c710c9389650ceaad37d</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>5a2b61c58372c710c9389650ceaad305</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>max_rows</element>
-            <position>8</position>
+            <position>9</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>fb97a58d8332c710c9389650ceaad37d</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>162b61c58372c710c9389650ceaad306</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>code_source_field</element>
-            <position>9</position>
+            <position>10</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
-            <sys_id>b797a58d8332c710c9389650ceaad37e</sys_id>
+            <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+            <sys_id>de2b61c58372c710c9389650ceaad306</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Value" display_value="Value" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">eef461498332c710c9389650ceaad397</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

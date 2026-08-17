@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>When the Connection Config reference is changed, pre-populates the Target Space Key field with the default_space_key from the selected Connection Config record.</description>
+        <field>connection_config</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>Pre-populate Target Space Key from Conne</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading) return;
+
+    // If the connection config was cleared, don't change anything
+    if (!newValue) return;
+
+    // Use getReference to fetch the Connection Config record's fields
+    g_form.getReference('connection_config', function (configRecord) {
+        if (configRecord && configRecord.default_space_key) {
+            g_form.setValue('target_space_key', configRecord.default_space_key);
+            g_form.addInfoMessage(
+                'Target Space Key pre-populated from Connection Config: ' +
+                    configRecord.default_space_key
+            );
+        }
+    });
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 16:18:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a75fcae2f83845c3bf8fb85fc1e55547</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Pre-populate Target Space Key from Connection Config</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_script_client_a75fcae2f83845c3bf8fb85fc1e55547</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 16:18:05</sys_updated_on>
+        <table>x_1295779_conflu_0_publishing_definition</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

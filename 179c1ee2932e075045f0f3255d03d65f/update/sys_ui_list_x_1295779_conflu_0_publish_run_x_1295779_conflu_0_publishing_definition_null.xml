@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="x_1295779_conflu_0_publishing_definition" relationship="" sys_domain="global" table="x_1295779_conflu_0_publish_run" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>status</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>c75365458332c710c9389650ceaad3a0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>publishing_definition</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>4f5365458332c710c9389650ceaad3a0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>source_id</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>c35365458332c710c9389650ceaad3a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>source_table</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>4b5365458332c710c9389650ceaad3a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>page_id</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>cf5365458332c710c9389650ceaad3a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>page_url</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>475365458332c710c9389650ceaad3a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>http_status</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>cb5365458332c710c9389650ceaad3a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>error_message</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>435365458332c710c9389650ceaad3a3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>operation</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>0353e9458332c710c9389650ceaad3cf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>request_payload</element>
+            <list_id display_value="x_1295779_conflu_0_publish_run" element="NULL" name="x_1295779_conflu_0_publish_run" parent="x_1295779_conflu_0_publishing_definition" relationship="NULL" sys_domain="global" view="Default view">475365458332c710c9389650ceaad39f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_id>8753e9458332c710c9389650ceaad3cf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_1295779_conflu_0_publish_run</name>
+            <parent>x_1295779_conflu_0_publishing_definition</parent>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:53:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>475365458332c710c9389650ceaad39f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1295779_conflu_0_publish_run</sys_name>
+            <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+            <sys_update_name>sys_ui_list_x_1295779_conflu_0_publish_run_x_1295779_conflu_0_publishing_definition_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:53:00</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

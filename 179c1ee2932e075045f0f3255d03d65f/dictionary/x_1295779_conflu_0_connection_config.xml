@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="a3c7fdbc3767453f8d2b115a00ccc6bc" label="Connection Config" name="x_1295779_conflu_0_connection_config" type="collection">
-        <element hint="Atlassian Cloud ID (UUID) used for API routing — retrieved from Atlassian" label="Cloud ID" max_length="100" name="cloud_id" type="string"/>
         <element hint="Confluence Cloud site URL (e.g. https://acme.atlassian.net)" label="Site URL" mandatory="true" max_length="1024" name="site_url" type="url"/>
-        <element hint="Fallback space key when a definition does not specify one" label="Default Space Key" max_length="40" name="default_space_key" type="string"/>
+        <element display="true" hint="A descriptive name to identify this Confluence connection (e.g. Production, Sandbox)" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element hint="Fallback space key used to pre-populate Publishing Definitions linked to this connection" label="Default Space Key" max_length="40" name="default_space_key" type="string"/>
+        <element hint="Atlassian Cloud ID (UUID) used for API routing — retrieved from Atlassian" label="Cloud ID" max_length="100" name="cloud_id" type="string"/>
     </element>
 </database>

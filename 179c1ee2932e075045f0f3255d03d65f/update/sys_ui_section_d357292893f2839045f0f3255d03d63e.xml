@@ -1,44 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="d357292893f2839045f0f3255d03d63e" sys_domain="global" table="x_1295779_conflu_0_connection_config" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>cloud_id</element>
+            <element>name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-16 02:53:38</sys_created_on>
-            <sys_id>2467a96893f2839045f0f3255d03d6cf</sys_id>
+            <sys_created_on>2026-08-17 17:54:09</sys_created_on>
+            <sys_id>311ff1413b3a4710c3a8f7c643e45a83</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-16 02:53:38</sys_updated_on>
+            <sys_updated_on>2026-08-17 17:54:09</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>default_space_key</element>
+            <element>cloud_id</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-16 02:53:38</sys_created_on>
-            <sys_id>f867a96893f2839045f0f3255d03d6d0</sys_id>
+            <sys_created_on>2026-08-17 17:54:09</sys_created_on>
+            <sys_id>f91ff1413b3a4710c3a8f7c643e45a83</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-16 02:53:38</sys_updated_on>
+            <sys_updated_on>2026-08-17 17:54:09</sys_updated_on>
             <sys_user/>
             <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 17:54:09</sys_created_on>
+            <sys_id>b51ff1413b3a4710c3a8f7c643e45a84</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 17:54:09</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>site_url</element>
-            <position>2</position>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-16 02:53:38</sys_created_on>
-            <sys_id>7867a96893f2839045f0f3255d03d6d1</sys_id>
+            <sys_created_on>2026-08-17 17:54:09</sys_created_on>
+            <sys_id>711ff1413b3a4710c3a8f7c643e45a85</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-16 02:53:38</sys_updated_on>
+            <sys_updated_on>2026-08-17 17:54:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 17:54:09</sys_created_on>
+            <sys_id>3d1ff1413b3a4710c3a8f7c643e45a85</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 17:54:09</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>default_space_key</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 17:54:09</sys_created_on>
+            <sys_id>f51ff1413b3a4710c3a8f7c643e45a86</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1295779_conflu_0_connection_config" sys_domain="global" view="Default view">d357292893f2839045f0f3255d03d63e</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 17:54:09</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

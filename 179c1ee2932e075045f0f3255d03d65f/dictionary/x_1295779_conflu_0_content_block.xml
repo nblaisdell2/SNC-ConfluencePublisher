@@ -1,27 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="d72b22d53ced473c896bb0c79f9e796d" label="Content Block" name="x_1295779_conflu_0_content_block" type="collection">
-        <element hint="Field name on the source record containing code to display" label="Code Source Field" max_length="80" name="code_source_field" type="string"/>
         <element hint="Server-side script for generating dynamic content programmatically" label="Script" max_length="8000" name="script" type="script"/>
-        <element hint="The Confluence rendering format: table, code, link, label, list, panel, or status" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+        <element hint="Comma-separated field names for table-type blocks (e.g. number,state)" label="Columns" max_length="500" name="columns" reference="sys_dictionary" reference_qual="javascript:'name=' + current.source_table" type="glide_list" use_reference_qualifier="advanced"/>
+        <element hint="Custom display headers matching column order (e.g. Number,State)" label="Column Labels" max_length="500" name="column_labels" type="string"/>
+        <element dependent="source_table" dependent_on_field="source_table" label="Condition" max_length="40" name="condition" type="conditions" use_dependent_field="true"/>
+        <element default="50" hint="Maximum number of rows to include in a table-type block" label="Max Rows" max_length="40" name="max_rows" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="label" hint="The Confluence rendering format: table, code, link, label, list, panel, or status" label="Type" mandatory="true" max_length="40" name="type" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Label" sequence="4" value="label"/>
-                <element inactive_on_update="false" label="Status" sequence="7" value="status"/>
+                <element inactive_on_update="false" label="Script" value="script"/>
                 <element inactive_on_update="false" label="Link" sequence="3" value="link"/>
+                <element inactive_on_update="false" label="Status" sequence="7" value="status"/>
                 <element inactive_on_update="false" label="Code" sequence="2" value="code"/>
                 <element inactive_on_update="false" label="Panel" sequence="6" value="panel"/>
                 <element inactive_on_update="false" label="Bullet List" sequence="5" value="bullet_list"/>
                 <element inactive_on_update="false" label="Table" sequence="1" value="table"/>
             </choice>
         </element>
-        <element default="50" hint="Maximum number of rows to include in a table-type block" label="Max Rows" max_length="40" name="max_rows" type="integer"/>
-        <element hint="Table to query data from for this block (can differ from definition)" label="Source Table" max_length="80" name="source_table" type="table_name"/>
-        <element hint="Syntax highlighting language (e.g. javascript, python, sql)" label="Code Language" max_length="40" name="code_language" type="string"/>
-        <element hint="Comma-separated field names for table-type blocks (e.g. number,state)" label="Columns" max_length="500" name="columns" type="string"/>
         <element hint="The parent definition this block belongs to" label="Publishing Definition" max_length="32" name="publishing_definition" reference="x_1295779_conflu_0_publishing_definition" type="reference"/>
+        <element hint="Table to query data from for this block (can differ from definition)" label="Source Table" max_length="80" name="source_table" type="table_name"/>
         <element display="true" hint="A descriptive label to identify this content block" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
-        <element hint="Encoded query to filter records from the source table" label="Source Query" max_length="1000" name="source_query" type="string"/>
         <element hint="Fixed text for label, link URL, or status badge value" label="Static Value" max_length="1000" name="static_value" type="string"/>
-        <element hint="Custom display headers matching column order (e.g. Number,State)" label="Column Labels" max_length="500" name="column_labels" type="string"/>
+        <element hint="Field name on the source record containing code to display" label="Code Source Field" max_length="80" name="code_source_field" type="string"/>
+        <element choice="1" hint="ADF-compliant syntax highlighting language for code snippet blocks in Confluence" label="Code Language" max_length="40" name="code_language" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="YAML" sequence="8" value="yaml"/>
+                <element inactive_on_update="false" label="TSX" sequence="4" value="tsx"/>
+                <element inactive_on_update="false" label="C++" sequence="16" value="cpp"/>
+                <element inactive_on_update="false" label="Nginx" sequence="32" value="nginx"/>
+                <element inactive_on_update="false" label="Groovy" sequence="46" value="groovy"/>
+                <element inactive_on_update="false" label="WebAssembly" sequence="61" value="wasm"/>
+                <element inactive_on_update="false" label="SCSS" sequence="12" value="scss"/>
+                <element inactive_on_update="false" label="Shell Session" sequence="28" value="shell-session"/>
+                <element inactive_on_update="false" label="Mermaid" sequence="44" value="mermaid"/>
+                <element inactive_on_update="false" label="PlantUML" sequence="57" value="plant-uml"/>
+                <element inactive_on_update="false" label="Swift" sequence="24" value="swift"/>
+                <element inactive_on_update="false" label="Makefile" sequence="40" value="makefile"/>
+                <element inactive_on_update="false" label="VB.NET" sequence="54" value="vbnet"/>
+                <element inactive_on_update="false" label="PHP" sequence="20" value="php"/>
+                <element inactive_on_update="false" label="Diff" sequence="36" value="diff"/>
+                <element inactive_on_update="false" label="Haskell" sequence="50" value="haskell"/>
+                <element inactive_on_update="false" label="XML" sequence="7" value="xml"/>
+                <element inactive_on_update="false" label="JSX" sequence="3" value="jsx"/>
+                <element inactive_on_update="false" label="CSS" sequence="11" value="css"/>
+                <element inactive_on_update="false" label="Kotlin" sequence="23" value="kotlin"/>
+                <element inactive_on_update="false" label="Properties" sequence="39" value="properties"/>
+                <element inactive_on_update="false" label="MATLAB" sequence="53" value="matlab"/>
+                <element inactive_on_update="false" label="Ruby" sequence="19" value="ruby"/>
+                <element inactive_on_update="false" label="Markdown" sequence="35" value="markdown"/>
+                <element inactive_on_update="false" label="Erlang" sequence="49" value="erlang"/>
+                <element inactive_on_update="false" label="C#" sequence="15" value="csharp"/>
+                <element inactive_on_update="false" label="Docker" sequence="31" value="docker"/>
+                <element inactive_on_update="false" label="Solidity" sequence="60" value="solidity"/>
+                <element inactive_on_update="false" label="Bash" sequence="27" value="bash"/>
+                <element inactive_on_update="false" label="Log" sequence="43" value="log"/>
+                <element inactive_on_update="false" label="Objective-C" sequence="56" value="objectivec"/>
+                <element inactive_on_update="false" label="HTML / Markup" sequence="10" value="html/markup"/>
+                <element inactive_on_update="false" label="JSON5" sequence="6" value="json5"/>
+                <element inactive_on_update="false" label="TypeScript" sequence="2" value="typescript"/>
+                <element inactive_on_update="false" label="Java" sequence="14" value="java"/>
+                <element inactive_on_update="false" label="Batch" sequence="30" value="batch"/>
+                <element inactive_on_update="false" label="Gradle" sequence="59" value="gradle"/>
+                <element inactive_on_update="false" label="Perl" sequence="26" value="perl"/>
+                <element inactive_on_update="false" label="HTTP" sequence="42" value="http"/>
+                <element inactive_on_update="false" label="Visual Basic" sequence="55" value="visual-basic"/>
+                <element inactive_on_update="false" label="Rust" sequence="22" value="rust"/>
+                <element inactive_on_update="false" label="TOML" sequence="38" value="toml"/>
+                <element inactive_on_update="false" label="R" sequence="52" value="r"/>
+                <element inactive_on_update="false" label="Python" sequence="18" value="python"/>
+                <element inactive_on_update="false" label="GraphQL" sequence="34" value="graphql"/>
+                <element inactive_on_update="false" label="Elixir" sequence="48" value="elixir"/>
+                <element inactive_on_update="false" label="JSON" sequence="5" value="json"/>
+                <element inactive_on_update="false" label="JavaScript" sequence="1" value="javascript"/>
+                <element inactive_on_update="false" label="SQL" sequence="9" value="sql"/>
+                <element inactive_on_update="false" label="Go" sequence="21" value="go"/>
+                <element inactive_on_update="false" label="INI" sequence="37" value="ini"/>
+                <element inactive_on_update="false" label="Lua" sequence="51" value="lua"/>
+                <element inactive_on_update="false" label="C" sequence="17" value="c"/>
+                <element inactive_on_update="false" label="Apache Conf" sequence="33" value="apacheconf"/>
+                <element inactive_on_update="false" label="Dart" sequence="47" value="dart"/>
+                <element inactive_on_update="false" label="Text" sequence="62" value="text"/>
+                <element inactive_on_update="false" label="Less" sequence="13" value="less"/>
+                <element inactive_on_update="false" label="PowerShell" sequence="29" value="powershell"/>
+                <element inactive_on_update="false" label="PL/SQL" sequence="45" value="plsql"/>
+                <element inactive_on_update="false" label="HCL (Terraform)" sequence="58" value="hcl (Terraform)"/>
+                <element inactive_on_update="false" label="Scala" sequence="25" value="scala"/>
+                <element inactive_on_update="false" label="Regex" sequence="41" value="regex"/>
+            </choice>
+        </element>
         <index name="index">
             <element name="publishing_definition"/>
         </index>

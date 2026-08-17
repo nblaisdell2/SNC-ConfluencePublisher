@@ -15,7 +15,7 @@
         <defaultsort/>
         <delete_roles/>
         <dependent>source_table</dependent>
-        <dependent_on_field/>
+        <dependent_on_field>source_table</dependent_on_field>
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
@@ -58,7 +58,7 @@
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
+        <use_dependent_field>true</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>

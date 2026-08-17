@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="55b31ace44f4404f8907360a652836be" label="Publish Run" name="x_1295779_conflu_0_publish_run" type="collection">
+        <element hint="Error details when status is Error — API response or exception text" label="Error Message" max_length="4000" name="error_message" type="string"/>
+        <element hint="Table name of the record being published" label="Source Table" max_length="80" name="source_table" type="string"/>
+        <element hint="Sys_id of the record being published" label="Source ID" max_length="32" name="source_id" type="string"/>
+        <element hint="HTTP response code from the Confluence API (e.g. 200, 401, 429)" label="HTTP Status" max_length="40" name="http_status" type="integer"/>
         <element hint="Whether this run created a new page or updated an existing one" label="Operation" max_length="40" name="operation" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Update" sequence="2" value="update"/>
                 <element inactive_on_update="false" label="Create" sequence="1" value="create"/>
             </choice>
         </element>
-        <element hint="Direct link to the Confluence page for quick verification" label="Page URL" max_length="1024" name="page_url" type="url"/>
-        <element hint="Error details when status is Error — API response or exception text" label="Error Message" max_length="4000" name="error_message" type="string"/>
-        <element hint="Sys_id of the record being published" label="Source ID" max_length="32" name="source_id" type="string"/>
-        <element hint="Confluence page ID that was created or updated" label="Page ID" max_length="40" name="page_id" type="string"/>
         <element hint="Confluence page version number after this operation" label="Version" max_length="40" name="version" type="integer"/>
+        <element hint="Confluence page ID that was created or updated" label="Page ID" max_length="40" name="page_id" type="string"/>
+        <element hint="Full JSON body sent to the Confluence API (for debugging)" label="Request Payload" max_length="65000" name="request_payload" type="string"/>
+        <element hint="Which definition triggered this publish attempt" label="Publishing Definition" max_length="32" name="publishing_definition" reference="x_1295779_conflu_0_publishing_definition" type="reference"/>
+        <element hint="Direct link to the Confluence page for quick verification" label="Page URL" max_length="1024" name="page_url" type="url"/>
         <element hint="Outcome of this publish attempt" label="Status" mandatory="true" max_length="40" name="status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Error" sequence="2" value="error"/>
                 <element inactive_on_update="false" label="Success" sequence="1" value="success"/>
                 <element inactive_on_update="false" label="Retried" sequence="4" value="retried"/>
                 <element inactive_on_update="false" label="Skipped" sequence="3" value="skipped"/>
+                <element inactive_on_update="false" label="Error" sequence="2" value="error"/>
             </choice>
         </element>
-        <element hint="Table name of the record being published" label="Source Table" max_length="80" name="source_table" type="string"/>
-        <element hint="HTTP response code from the Confluence API (e.g. 200, 401, 429)" label="HTTP Status" max_length="40" name="http_status" type="integer"/>
-        <element hint="Full JSON body sent to the Confluence API (for debugging)" label="Request Payload" max_length="65000" name="request_payload" type="string"/>
-        <element hint="Which definition triggered this publish attempt" label="Publishing Definition" max_length="32" name="publishing_definition" reference="x_1295779_conflu_0_publishing_definition" type="reference"/>
         <index name="index">
             <element name="publishing_definition"/>
         </index>

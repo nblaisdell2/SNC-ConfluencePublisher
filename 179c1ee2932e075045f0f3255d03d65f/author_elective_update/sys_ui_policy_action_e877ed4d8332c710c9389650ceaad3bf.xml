@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>source_query</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 16:10:51</sys_created_on>
+        <sys_id>e877ed4d8332c710c9389650ceaad3bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>source_query</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_ui_policy_action_e877ed4d8332c710c9389650ceaad3bf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 16:10:51</sys_updated_on>
+        <table>x_1295779_conflu_0_content_block</table>
+        <ui_policy display_value="Show table fields">ac77ed4d8332c710c9389650ceaad3a1</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="DELETE" query="documentkey=e877ed4d8332c710c9389650ceaad3bf"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</application>
+        <file_path/>
+        <instance_id>1c60d9531b7d3550699443f4bd4bcb9d</instance_id>
+        <instance_name>dev186772</instance_name>
+        <name>sys_ui_policy_action_e877ed4d8332c710c9389650ceaad3bf</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>ignore</disabled><field>source_query</field><field_message/><field_message_type>none</field_message_type><mandatory>ignore</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-17 16:10:51</sys_created_on><sys_id>e877ed4d8332c710c9389650ceaad3bf</sys_id><sys_mod_count>0</sys_mod_count><sys_name>source_query</sys_name><sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package><sys_policy/><sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope><sys_update_name>sys_ui_policy_action_e877ed4d8332c710c9389650ceaad3bf</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-17 16:10:51</sys_updated_on><table>x_1295779_conflu_0_content_block</table><ui_policy display_value="Show table fields">ac77ed4d8332c710c9389650ceaad3a1</ui_policy><value/><value_action>ignore</value_action><visible>true</visible></sys_ui_policy_action><sys_translated_text action="delete_multiple" query="documentkey=e877ed4d8332c710c9389650ceaad3bf"/></record_update>]]></payload>
+        <payload_hash>-434629853</payload_hash>
+        <record_name>source_query</record_name>
+        <reverted_from/>
+        <source>8d19a1818372c710c9389650ceaad3ae</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 16:18:02</sys_created_on>
+        <sys_id>f11925818372c710c9389650ceaad3cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a01084057c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 16:18:02</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>a477ed4d8632c7103023152fbcd8fcc2</update_guid>
+        <update_guid_history>a477ed4d8632c7103023152fbcd8fcc2:-434629853,29e82541ac72c7100023be5d2459d6a7:-623597265,a477ed4d8632c7103023152fbcd8fcc2:-434629853</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 16:38:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>02a3b74222714ee5aaffea895131ed31</sys_id>
+        <sys_metadata>e877ed4d8332c710c9389650ceaad3bf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>source_query</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_parent display_value="Show table fields">ac77ed4d8332c710c9389650ceaad3a1</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_scope_delete display_value="">03788dd5867e457c822bbacc74588710</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_e877ed4d8332c710c9389650ceaad3bf</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_e877ed4d8332c710c9389650ceaad3bf">f11925818372c710c9389650ceaad3cf</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 16:38:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

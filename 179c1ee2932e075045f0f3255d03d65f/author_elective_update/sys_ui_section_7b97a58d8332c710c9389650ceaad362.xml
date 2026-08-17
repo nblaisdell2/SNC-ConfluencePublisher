@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Script" section_id="7b97a58d8332c710c9389650ceaad362" sys_domain="global" table="x_1295779_conflu_0_content_block" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>script</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
+            <sys_id>bf97a58d8332c710c9389650ceaad385</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Script" display_value="Script" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">7b97a58d8332c710c9389650ceaad362</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Script</caption>
+            <header>false</header>
+            <name>x_1295779_conflu_0_content_block</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 16:11:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7b97a58d8332c710c9389650ceaad362</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1295779_conflu_0_content_block</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+            <sys_update_name>sys_ui_section_7b97a58d8332c710c9389650ceaad362</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 16:11:37</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</application>
+        <file_path/>
+        <instance_id>1c60d9531b7d3550699443f4bd4bcb9d</instance_id>
+        <instance_name>dev186772</instance_name>
+        <name>sys_ui_section_7b97a58d8332c710c9389650ceaad362</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Script" section_id="7b97a58d8332c710c9389650ceaad362" sys_domain="global" table="x_1295779_conflu_0_content_block" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>script</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-17 16:11:37</sys_created_on><sys_id>bf97a58d8332c710c9389650ceaad385</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Script" display_value="Script" name="x_1295779_conflu_0_content_block" sys_domain="global" view="Default view">7b97a58d8332c710c9389650ceaad362</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-17 16:11:37</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Script</caption><header>false</header><name>x_1295779_conflu_0_content_block</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-17 16:11:37</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>7b97a58d8332c710c9389650ceaad362</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1295779_conflu_0_content_block</sys_name><sys_overrides/><sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package><sys_policy/><sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope><sys_update_name>sys_ui_section_7b97a58d8332c710c9389650ceaad362</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-17 16:11:37</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>-1205970248</payload_hash>
+        <record_name>Content Block</record_name>
+        <reverted_from/>
+        <source>8d19a1818372c710c9389650ceaad3ae</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 16:18:03</sys_created_on>
+        <sys_id>021965818372c710c9389650ceaad301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0108407860000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 16:18:03</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>7797a58d4c32c7107dfcc1bca3495788</update_guid>
+        <update_guid_history>7797a58d4c32c7107dfcc1bca3495788:-1205970248,dde8e141b772c710d5f7c21c410147f3:524462119,7797a58d4c32c7107dfcc1bca3495788:-1205970248</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 16:27:05</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>20cffc4f356a4bc49f3f02e5c892a824</sys_id>
+        <sys_metadata>7b97a58d8332c710c9389650ceaad362</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1295779_conflu_0_content_block</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_parent display_value="Content Block">d72b22d53ced473c896bb0c79f9e796d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_scope_delete display_value="">03788dd5867e457c822bbacc74588710</sys_scope_delete>
+        <sys_update_name>sys_ui_section_7b97a58d8332c710c9389650ceaad362</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_7b97a58d8332c710c9389650ceaad362">021965818372c710c9389650ceaad301</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 16:27:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

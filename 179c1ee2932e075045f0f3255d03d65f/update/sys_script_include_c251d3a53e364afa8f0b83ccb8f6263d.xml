@@ -48,9 +48,9 @@ ConfluencePublisher.prototype = {
             return
         }
 
-        var config = this._getConnectionConfig()
+        var config = this._getConnectionConfig(definition.connection_config)
         if (!config || !config.cloud_id) {
-            gs.addErrorMessage('Connection configuration not found or missing cloud_id. Please configure the Confluence connection.')
+            gs.addErrorMessage('Connection configuration not found or missing cloud_id. Please ensure the Publishing Definition references a valid Connection Config with a Cloud ID.')
             return
         }
 
@@ -58,7 +58,12 @@ ConfluencePublisher.prototype = {
             gs.warn('ConfluencePublisher: OAuth profile not found - will use manual token request')
         }
 
-        var spaceKey = definition.target_space_key
+        // Use definition's target space key, falling back to the connection config's default
+        var spaceKey = definition.target_space_key || config.default_space_key
+        if (!spaceKey) {
+            gs.addErrorMessage('No space key configured. Set a Target Space Key on the Publishing Definition or a Default Space Key on the Connection Config.')
+            return
+        }
         var spaceId = this._getSpaceId(config.cloud_id, spaceKey, definition.parent_page_id)
         if (!spaceId) {
             gs.addErrorMessage('Could not resolve space ID for space key: ' + spaceKey + '. Verify the space exists and the OAuth token has access. Check system logs for details.')
@@ -553,6 +558,7 @@ ConfluencePublisher.prototype = {
         return {
             sys_id: definitionSysId,
             name: gr.getValue('name') || '',
+            connection_config: gr.getValue('connection_config') || '',
             source_table: gr.getValue('source_table') || '',
             target_space_key: gr.getValue('target_space_key') || '',
             parent_page_id: gr.getValue('parent_page_id') || '',
@@ -566,18 +572,31 @@ ConfluencePublisher.prototype = {
         }
     },
 
-    _getConnectionConfig: function () {
-        var gr = new GlideRecord('x_1295779_conflu_0_connection_config')
-        gr.setLimit(1)
-        gr.query()
-        if (gr.next()) {
-            return {
-                site_url: gr.getValue('site_url') || '',
-                default_space_key: gr.getValue('default_space_key') || '',
-                cloud_id: gr.getValue('cloud_id') || ''
-            }
+    /**
+     * Get the connection configuration for a publishing definition.
+     * Reads the connection config record referenced by the definition.
+     *
+     * @param {string} connectionConfigSysId - sys_id of the connection config record
+     * @returns {object|null} Connection config object or null if not found
+     */
+    _getConnectionConfig: function (connectionConfigSysId) {
+        if (!connectionConfigSysId) {
+            gs.error('ConfluencePublisher._getConnectionConfig: No connection_config reference on the Publishing Definition')
+            return null
         }
-        return null
+
+        var gr = new GlideRecord('x_1295779_conflu_0_connection_config')
+        if (!gr.get(connectionConfigSysId)) {
+            gs.error('ConfluencePublisher._getConnectionConfig: Connection Config record not found for sys_id: ' + connectionConfigSysId)
+            return null
+        }
+
+        return {
+            name: gr.getValue('name') || '',
+            site_url: gr.getValue('site_url') || '',
+            default_space_key: gr.getValue('default_space_key') || '',
+            cloud_id: gr.getValue('cloud_id') || ''
+        }
     },
 
     _getSourceRecords: function (definition) {

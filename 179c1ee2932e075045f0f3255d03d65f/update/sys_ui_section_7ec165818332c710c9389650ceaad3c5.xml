@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="HTTP" section_id="7ec165818332c710c9389650ceaad3c5" sys_domain="global" table="x_1295779_conflu_0_publish_run" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:46:38</sys_created_on>
+            <sys_id>7de1a9818332c710c9389650ceaad31a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="HTTP" display_value="HTTP" name="x_1295779_conflu_0_publish_run" sys_domain="global" view="Default view">7ec165818332c710c9389650ceaad3c5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:46:38</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>operation</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:46:38</sys_created_on>
+            <sys_id>39e1a9818332c710c9389650ceaad31b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="HTTP" display_value="HTTP" name="x_1295779_conflu_0_publish_run" sys_domain="global" view="Default view">7ec165818332c710c9389650ceaad3c5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:46:38</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:46:38</sys_created_on>
+            <sys_id>f1e1a9818332c710c9389650ceaad31c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="HTTP" display_value="HTTP" name="x_1295779_conflu_0_publish_run" sys_domain="global" view="Default view">7ec165818332c710c9389650ceaad3c5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:46:38</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>http_status</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:46:38</sys_created_on>
+            <sys_id>bde1a9818332c710c9389650ceaad31c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="HTTP" display_value="HTTP" name="x_1295779_conflu_0_publish_run" sys_domain="global" view="Default view">7ec165818332c710c9389650ceaad3c5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:46:38</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:46:38</sys_created_on>
+            <sys_id>79e1a9818332c710c9389650ceaad31d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="HTTP" display_value="HTTP" name="x_1295779_conflu_0_publish_run" sys_domain="global" view="Default view">7ec165818332c710c9389650ceaad3c5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:46:38</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>error_message</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:46:38</sys_created_on>
+            <sys_id>35e1a9818332c710c9389650ceaad31e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="HTTP" display_value="HTTP" name="x_1295779_conflu_0_publish_run" sys_domain="global" view="Default view">7ec165818332c710c9389650ceaad3c5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:46:38</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>HTTP</caption>
+            <header>false</header>
+            <name>x_1295779_conflu_0_publish_run</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 15:46:10</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7ec165818332c710c9389650ceaad3c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1295779_conflu_0_publish_run</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+            <sys_update_name>sys_ui_section_7ec165818332c710c9389650ceaad3c5</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 15:46:10</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

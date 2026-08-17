@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1295779_conflu_0.OAuthConfluenceUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>OAuthConfluenceUtil</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var OAuthConfluenceUtil = Class.create();
+OAuthConfluenceUtil.prototype = Object.extendsObject(OAuthUtil, {
+
+	preprocessAuthCode: function(requestParamMap) {
+		this.oauthContext.setAuthorizationEndpoint("https://accounts.google.com/o/oauth2/v2/auth");
+		this.oauthContext.addHeader("Content-Type","application/json");
+		var profGr = this.oauthContext.getOAuthProfile();
+		gs.info(profGr.getValue('name'));
+	},
+	
+	preprocessAccessToken: function(requestParamMap) {
+		this.oauthContext.addHeader("Content-Type","application/json");
+		this.oauthContext.addQueryParameter("name","jackson");
+		gs.info(this.oauthContext.getQueryParameter("name"));
+		gs.info(this.oauthContext.getHeader("Content-Type"));
+		this.oauthContext.setTokenEndpoint("https://oauth2.googleapis.com/token");
+		var profGr = this.oauthContext.getOAuthProfile();
+		gs.info(profGr.getValue('grant_type'));
+	},
+	
+	type: 'OAuthConfluenceUtil'
+}); ]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-16 00:54:58</sys_created_on>
+        <sys_id>f9fbc9ac93fe439045f0f3255d03d640</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>OAuthConfluenceUtil</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_script_include_f9fbc9ac93fe439045f0f3255d03d640</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 00:54:58</sys_updated_on>
+    </sys_script_include>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</application>
+        <file_path/>
+        <instance_id>1c60d9531b7d3550699443f4bd4bcb9d</instance_id>
+        <instance_name>dev186772</instance_name>
+        <name>sys_script_include_f9fbc9ac93fe439045f0f3255d03d640</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;
+    &lt;sys_script_include action="INSERT_OR_UPDATE"&gt;
+        &lt;access&gt;package_private&lt;/access&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;api_name&gt;x_1295779_conflu_0.OAuthConfluenceUtil&lt;/api_name&gt;
+        &lt;caller_access/&gt;
+        &lt;client_callable&gt;false&lt;/client_callable&gt;
+        &lt;description/&gt;
+        &lt;mobile_callable&gt;false&lt;/mobile_callable&gt;
+        &lt;name&gt;OAuthConfluenceUtil&lt;/name&gt;
+        &lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;
+        &lt;script&gt;&lt;![CDATA[var OAuthConfluenceUtil = Class.create();
+OAuthConfluenceUtil.prototype = Object.extendsObject(OAuthUtil, {
+
+	preprocessAuthCode: function(requestParamMap) {
+		this.oauthContext.setAuthorizationEndpoint("https://accounts.google.com/o/oauth2/v2/auth");
+		this.oauthContext.addHeader("Content-Type","application/json");
+		var profGr = this.oauthContext.getOAuthProfile();
+		gs.info(profGr.getValue('name'));
+	},
+	
+	preprocessAccessToken: function(requestParamMap) {
+		this.oauthContext.addHeader("Content-Type","application/json");
+		this.oauthContext.addQueryParameter("name","jackson");
+		gs.info(this.oauthContext.getQueryParameter("name"));
+		gs.info(this.oauthContext.getHeader("Content-Type"));
+		this.oauthContext.setTokenEndpoint("https://oauth2.googleapis.com/token");
+		var profGr = this.oauthContext.getOAuthProfile();
+		gs.info(profGr.getValue('grant_type'));
+	},
+	
+	type: 'OAuthConfluenceUtil'
+}); ]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2026-08-16 00:54:58&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;f9fbc9ac93fe439045f0f3255d03d640&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;OAuthConfluenceUtil&lt;/sys_name&gt;
+        &lt;sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0"&gt;179c1ee2932e075045f0f3255d03d65f&lt;/sys_package&gt;
+        &lt;sys_policy&gt;read&lt;/sys_policy&gt;
+        &lt;sys_scope display_value="Confluence Publisher"&gt;179c1ee2932e075045f0f3255d03d65f&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_include_f9fbc9ac93fe439045f0f3255d03d640&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2026-08-16 00:54:58&lt;/sys_updated_on&gt;
+    &lt;/sys_script_include&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>1073669993</payload_hash>
+        <record_name>OAuthConfluenceUtil</record_name>
+        <reverted_from/>
+        <source>2e686fac83320710c9389650ceaad372</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-16 12:17:38</sys_created_on>
+        <sys_id>ee782bec83320710c9389650ceaad32f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a00a8190ea0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 12:17:38</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>ae782bec6d3207106ee52939e492b22f</update_guid>
+        <update_guid_history>ae782bec6d3207106ee52939e492b22f:1073669993</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 15:09:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>53c7161f68ea47a4b6baaef523588c44</sys_id>
+        <sys_metadata>f9fbc9ac93fe439045f0f3255d03d640</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>OAuthConfluenceUtil</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_scope_delete display_value="">03788dd5867e457c822bbacc74588710</sys_scope_delete>
+        <sys_update_name>sys_script_include_f9fbc9ac93fe439045f0f3255d03d640</sys_update_name>
+        <sys_update_version display_value="sys_script_include_f9fbc9ac93fe439045f0f3255d03d640">ee782bec83320710c9389650ceaad32f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 15:09:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

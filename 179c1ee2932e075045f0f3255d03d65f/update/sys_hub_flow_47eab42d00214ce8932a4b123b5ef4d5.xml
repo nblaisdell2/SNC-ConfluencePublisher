@@ -1,0 +1,2010 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>timeFromCreateToActivate=26000</attributes>
+        <authored_on_release_version/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Convenience subflow that chains Get Publishing Context, Build Page Content, and Publish Page to Confluence for a single record</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source>fluent</generation_source>
+        <internal_name>publish_record_to_confluence</internal_name>
+        <label_cache>[{"name":"subflow.publishing_definition","label":"Input➛Publishing Definition","type":"string","base_type":"string","usedInstances":{"cfb938b3-eec4-4650-85a2-c6b6da25f4e3":["publishing_definition"],"acc2853c-f570-486c-a40c-f41acf6779f2":["publishing_definition"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["publishing_definition"]},"attributes":{}},{"name":"subflow.source_record_id","label":"Input➛Source Record ID","type":"string","base_type":"string","usedInstances":{"cfb938b3-eec4-4650-85a2-c6b6da25f4e3":["source_record_id"],"acc2853c-f570-486c-a40c-f41acf6779f2":["source_record_id"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["source_record_id"]},"attributes":{}},{"name":"subflow.source_table","label":"Input➛Source Table","type":"string","base_type":"string","usedInstances":{"cfb938b3-eec4-4650-85a2-c6b6da25f4e3":["source_table"],"acc2853c-f570-486c-a40c-f41acf6779f2":["source_table"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["source_table"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.operation","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛operation","type":"string","base_type":"string","usedInstances":{"09d898d9-d801-44c6-8fff-baf08185709c":["condition"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["operation"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.cloud_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛cloud_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["cloud_id"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.space_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛space_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["space_id"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.page_title","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛page_title","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["page_title"]},"attributes":{}},{"name":"acc2853c-f570-486c-a40c-f41acf6779f2.adf_content","label":"acc2853c-f570-486c-a40c-f41acf6779f2➛adf_content","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["adf_content"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.existing_page_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛existing_page_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["existing_page_id"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.current_version","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛current_version","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["current_version"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.parent_page_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛parent_page_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["parent_page_id"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.page_id","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛page_id","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["page_id"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.page_url","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛page_url","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["page_url"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.status","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛status","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["status"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.error_message","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛error_message","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["error_message"]},"attributes":{}}]</label_cache>
+        <master_snapshot>80b016c53bba4710c3a8f7c643e45ae8</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Publish Record to Confluence</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>47eab42d00214ce8932a4b123b5ef4d5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Publish Record to Confluence</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_hub_flow_47eab42d00214ce8932a4b123b5ef4d5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:05</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>c5a11a493bba4710c3a8f7c643e45a57</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5^id=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=47eab42d00214ce8932a4b123b5ef4d5^sys_idNOT IN172511640e484dbb8ce6d630fbaf358f,692e5a872aec4058968a53f7ce6f462d,dd7b764f1328415f9a26de31cecc59f5"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_record_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Record ID</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</model>
+        <model_id>47eab42d00214ce8932a4b123b5ef4d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>172511640e484dbb8ce6d630fbaf358f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=172511640e484dbb8ce6d630fbaf358f"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_table</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Table</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</model>
+        <model_id>47eab42d00214ce8932a4b123b5ef4d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>692e5a872aec4058968a53f7ce6f462d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=692e5a872aec4058968a53f7ce6f462d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>publishing_definition</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Publishing Definition</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</model>
+        <model_id>47eab42d00214ce8932a4b123b5ef4d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>dd7b764f1328415f9a26de31cecc59f5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=dd7b764f1328415f9a26de31cecc59f5"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=47eab42d00214ce8932a4b123b5ef4d5^sys_idNOT IN610c6d6015f1478798596b82fb6719d9,a1202d887ec14d2e8cb96281a22ecf1b,ba03d9f91c084487ad3a01f2877ffce5,c84ff93867a24315bc4faadadf4f4515"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>page_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Page ID</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</model>
+        <model_id>47eab42d00214ce8932a4b123b5ef4d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>610c6d6015f1478798596b82fb6719d9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=610c6d6015f1478798596b82fb6719d9"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Error Message</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</model>
+        <model_id>47eab42d00214ce8932a4b123b5ef4d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>a1202d887ec14d2e8cb96281a22ecf1b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a1202d887ec14d2e8cb96281a22ecf1b"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>page_url</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Page URL</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</model>
+        <model_id>47eab42d00214ce8932a4b123b5ef4d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>ba03d9f91c084487ad3a01f2877ffce5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ba03d9f91c084487ad3a01f2877ffce5"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Status</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</model>
+        <model_id>47eab42d00214ce8932a4b123b5ef4d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>c84ff93867a24315bc4faadadf4f4515</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c84ff93867a24315bc4faadadf4f4515"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=47eab42d00214ce8932a4b123b5ef4d5^sys_idNOT IN91dba1ffd972471fbd34ccd44a0f0366,acc2853cf570486ca40cf41acf6779f2,cfb938b3eec4465085a2c6b6da25f4e3"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Publish Page to Confluence">63905e853bba4710c3a8f7c643e45ae0</action_type>
+        <action_type_parent display_value="Publish Page to Confluence">c38e701364be45978f1910af97c41503</action_type_parent>
+        <attributes/>
+        <comment>Create or update Confluence page</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>91dba1ffd972471fbd34ccd44a0f0366</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:00</sys_updated_on>
+        <ui_id>91dba1ff-d972-471f-bd34-ccd44a0f0366</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2Z227bOBCGX8XQtR2IZzJ3RbIFCnQ3i6boTVEYPDYCFMmrQ5pskHffkS07cqxGVYwufKE7i575OT/1geJIXx+jTN/66DyyaV67ZeKieXSn07oZeny0wSgiDVl4b+mCchYvJNN4YbnhTmMWqCdn28ynJ8h1SblK9cOXIyRWuoCSKl9E54+RvUlSV/gsOv/6bR5BeeeR9EYSZYJGMlAUU8U4ZpTG3FInqZEgkWrjUwi9aHRnHy5h6NBm9bBqRsqqSLLv7fXHNvF6O5gXrikEzSN/X/nMeagg6LT08+hWZ05XefEQnVdFDQOF1+4qSx92ETdJVoFY1MTel8m/MB2Nm7jgwZL1m/92l8t28TbD4VJXGuqobVUXbai9yRPry81iOB90nVYX3bFNwNWqSvJsk1Jpk26z87S+zf7aLES0E9jeKxipSyjCrxqfTeWtjXB9k//4tK3yfZKtl6T9M82tTndXuoKFM3XV1PP4NI/Kh/Ii1WX5PCm4Xf5TNymbEtrJlpt6mxRbJKvqna2SO9/qPs13mJYrDQv1Fky3mUdguicxhKm3ihKGueCBUq+RcZYoL6WjXDvlaAfT60Z3D9OOzTGY4gnT08B0pb/7ZZVU4Gk0qM+5R6D6QmQIVuGI8zwIjB2nFuSRo14K7AX88ix0YP0blGefW2t9dscASyZgTwNY7cLS5lnV1NclVluLJSN2EZiIF1Ryu9A0hkuKtA1cCBXwWSe5H9k3qQwx60CVsMA5ojHACueB4BHC3hkFmyzrngPeXb6fXezc9VoeQy2dqD0NavOVL/Ta3ehddpd6xCa7rzHEKzbcCisDik1MTayVJAQjJYMQNgaWO7xedXz1WB3DKptYPQ1W/X1SVnBrluuH5VtOsC8VjiC3V2oIYMtFjI0URsWKIqI1o9B3EW+DYyjWrgPwH63+bH1a6J5se5ZhDM78dZzbkYnn38+zrYuiCb/zRfmmHfiFwDGvD3qUhmCOqeZGeQxHBUcJdQp4BrQ5QRR5okT3LcJGfvZl5/SnSzAGZTGhfCIoAytN9Js35v38o7q2A6Ehjg32zBuFHTGIeqakQAxTjiQcgxUci/c6tzXGB1vygf0xFMuJ4hOhuN2Flre+LOFWdjA+5PFXXglYwTkVwRjnKXOxChpDy4Q0CwJb2X1/1W6Msz93M/+0pDFoqQmtE0FrVZs0KW+aYxuUn2TJQc9V1iak+Y+z3sj+HXE4ZbCjgs4fWxHzYCi1HpkguJNBCWUoUhp3977dJLPLroMBg6O+EcQTryfCa5nXBaxU4S3cm5eP9C13L4Nep7Q3evgVFYJuyQtEkKXIYak4MjFS0EURxBjvAHq91p99Wuvvfws4NDMKy4FvVxOW/zeWG1evILkO+CUcnyMHH+fCulhzzBmVlEgsLQ8O2nlhqHLOkEMUP7dl9hc/CsGB71ITgr8ZwW//AQYfLL7oHwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=91dba1ffd972471fbd34ccd44a0f0366"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</action_type>
+        <action_type_parent display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</action_type_parent>
+        <attributes/>
+        <comment>Build ADF document from content blocks or template</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>acc2853cf570486ca40cf41acf6779f2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:00</sys_updated_on>
+        <ui_id>acc2853c-f570-486c-a40c-f41acf6779f2</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2STW/bMAyG/0qgszHYjRLLuQ0NBgwY1qEZdimKgJboRYBie/po6wX576M/4gRb0Cyn7dCjyJfkS+p52LEStsgWrA650W6jy+9rhYUutddVySL2BCa0+d3Ohbww1fO7s8r9nrRKu9pA8+2Kkhoszfdo2WLH5EYbZbFki4fHiGlFPVI1m4rZjZRZIrhADjOYJ9N4iiLlcZpPqYWBHA1Jv4xDJsvTDS4s6Ju6TTtvKTW8Pw0tV4dgZVVrMYkYvngsFZK3AozDiG2hVOAr27CFt4ECFkHdlaYZFTTTUzPWal+c/knjeNzqCqRlJfa58bkeztiHiyV4IB9B+mAHqdxUWqLrz0TLQDD+9jTWC+7qbsWuxENuDtWVCdvyc38VNjY4/BpFgiMTWLd7ts6HNYrVpnq+P7j8oMvuJEPSVBLM+AJPh8uDb/3s9hFzjbs14NxxKG27/hHakt7CMGzd+21LpNW1fy+9fsKh7z4aaXVVsHQpi5J+Zk2knAP1d9HrjJ5VX8ITkoTPU1VIzFKe4ZxQLRKeJJITtpkoTvBcdf0n913/ycflkcwzy1wD5c0blP8VlP1WrwDZCf4KxqPyEogYZyrjAnIlEh6jyHnCVQwq55mQQvA/Qfw62Dxv/hoAp28A/ksAH38BQxndOcUHAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=acc2853cf570486ca40cf41acf6779f2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Publishing Context">a1a012c53bba4710c3a8f7c643e45af3</action_type>
+        <action_type_parent display_value="Get Publishing Context">e095917fff8747b5b6b6b0ca9e647fc6</action_type_parent>
+        <attributes/>
+        <comment>Resolve publishing definition and determine operation</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>cfb938b3eec4465085a2c6b6da25f4e3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:00</sys_updated_on>
+        <ui_id>cfb938b3-eec4-4650-85a2-c6b6da25f4e3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1STWvbQBD9K2bPouirluRbiSkUSlPi0ksIZqSdjRfWkrofSVTh/97Rh2VTRFyfmkNu2pk3b94bvfuWlbBHtmK1y5U0O1k+bjkKWUorq5J57AmU6/pta1wuVPX8YRZ5OBCWS1MraH5eMVKDpv0WNVu1rNhJxTWWbHX/4DHJiSNLsgz8nOdZnMVRmOQ8QfpYop/4YcqRKBTkqAj6fVqyWJ87uGDQNnXXNlZTa3x/HSk3x2KleScx8Bi+WCw5kjYByqDH9lBysJVu2MpqRwWNwG9L1UwI2mmJjHXYFyN/07rY73ACyWyBQ296bsczDmWxBgukwxXW6RFa7CpZoBnORGbAKXtzXhsAt3VvsR+xkKvjdKXcvvw2XIVNBMe/RhVnSATWnc9O+WhDbHbV891R5WdZ9icZm6oqQE0vsHS43NlOT3vwmGnMjQJjTkvJ7faX60YGCeOy7aC3Gym0rO2nwsonHHkP3pRWUzlNl9JY0J/ZUlLmgvo36PWMzqIvxTMOIc14LnzkIo5SnkKSYRRGyXKZCITiLJ6bnn9x1/MvvqxPyZwxc00ow/dQvqlQDq5eCWQP+KcwnpCXghiKgPMgCT6GS4hDjFMQQRxGUeanfp5mM0H8McqcF39NAKP3AP7PAD78AeLI2qHFBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cfb938b3eec4465085a2c6b6da25f4e3"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=47eab42d00214ce8932a4b123b5ef4d5^sys_idNOT IN07e8e03496b144a9bc831a2f6d6e4fac,09d898d9d80144c68fffbaf08185709c,2f94b4adb3054a6b89a2190f1b5522db,68ff059eb6144b398618f2ceab9157ca"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">17a0d2c53bba4710c3a8f7c643e45abd</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned>page_id,page_url,status,error_message</outputs_assigned>
+        <parent_ui_id>09d898d9-d801-44c6-8fff-baf08185709c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>07e8e03496b144a9bc831a2f6d6e4fac</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:00</sys_updated_on>
+        <ui_id>07e8e034-96b1-44a9-bc83-1a2f6d6e4fac</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2WXU/bMBSG/0rk606K0zQfvUOwSUjdmIDtZpqqE3+0Fq6d+QPoKv77bJKmGbALhqZxwV38+hz7fU8eRdkh7V3rnb3UR9aKlULzbzukYMPQHLWwYktB0QRdg/RRCY9U2FbC9utBIWshqWGx9fskNJnQ7ZhB8x0SKjwokAuhrp4qDofPUYFTUtAixTOO87Iq62pWF02V8aYocU3r0CWhYTKUfg6OktOToDyy6LZtFKwzQq369aJvu9iL2tBoDE8Qu3VMURbu5yAtm6ANKApOm+2gGAb0TMmDsA5xuhQbuLXiZ7gvT2MdZyER6ccxLJf9qDqZn4CDYMQT580wOS0Is90sKOPgpTsea13BWeuEVl2Lg0buu7X0G/WpGwQaDhi9GW+DCdbGoNF5H4NfrPXN+d7lB6HuZ9JvSk1ADitwYXKNd9HP7m6C7NYeS7D2cGlIu/zhY0tnob9s2fmNLcSI1h0RJ65Zf+7d5HfEvJH/mrEG0imteY1JWuV5VQKdQop5VpUl54TNHjL25XzxALLO5HMoy94oeyWUWQfO2xFj9kq0LaOPUTtsvJQ4UuWc19OqKCHLp3jWkJwDUKA85/kMj4m72Nt7aPc5tE3faHsltDFjtFlumLXhuzGC7qxlBmLqhEaSNkIxmoBNInPJu0TppPWNFHadKMboU3T+xQkvxRhwlma0qkpGcE4zVpGmLrIKQ5YxwnEzwvh9zJ18HHL/YRzPgTp/g/q/Qh0pUPH3sEt5DUbEWMMgiLAh8GXUTkd1dBvevSBj6UabKy71zUG7+wWtmNLWfAoAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">57a0d2c53bba4710c3a8f7c643e45ab9</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>09d898d9d80144c68fffbaf08185709c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:00</sys_updated_on>
+        <ui_id>09d898d9-d801-44c6-8fff-baf08185709c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Of28pJmiztGwIhIbEhDcTLhqIbf7QWbpzZDpBF/e+7TtIWQSfYx+Neqvr4fpxzc0/SEdP4uvHuxpw4p1YVWX69mxBVBQz/d6SCjSBLwkzFlVemIhPyALoJWNcxWS6SvEymQrD5dJ6ldJqnEE9ZVmYc4lTORTIztbAQUrfbbw2lCXf3qsYyXLlaQ3v7b6qxtdLcilFADRZ5e2HJsntxpTg2W0Aq04imLImzJKY0zudRmSVlFPMExDzDghpKoTH09JnyI8PwbR0g562qVuP5cky93oHG8kAlphMinryouEASErQTE7KBioM3tiVLbxsErAB+Vel2H7FWlcdqJMQ+OfVDhEqUhkgpUBcTw+3+WIyjHWB5Bh6QSsN8Y8dQtjaKCTdMhAsJjfanz7Eh4KruVfYpHkq9yza62VSfh2GQfYHdk0SkcUhC1EFp4D4Kkddr8/hlx/JcVf1UxkttGOj9CTzOrmx84NMRocUGCxUbqGucaFFb86D6ZOSyma00HmZSm0dsGrZ4BiwQn+FgYXaO+FkP34JVQcUnLIPJuAuucMyqeqetb062E+Jad6rBuYNGHG7xvQkMB8WjtmIYT0jpC51g4wcxythOOhJYXZqVYheV84Cyr1t3EVaQLni+yDn+0mg+Z1kupSxB0jzK0490wci4qpKCjBYsOr6qkBxZy6IHDkZ9bTbytkXe0feVRT4Mm/9rRr/jlugNt4zIu+ySpv/d8tduCTRLcIoV/fcBy4UX1h/aZRz6uRKaH12hY366Czs9sNo/DaYcpt0E7GL32QoXLa5ccN0BejT2Psg+YNufS7300QAHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6fa0d2c53bba4710c3a8f7c643e45ac4</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>7</order>
+        <outputs_assigned>page_id,page_url,status,error_message</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>2f94b4adb3054a6b89a2190f1b5522db</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:00</sys_updated_on>
+        <ui_id>2f94b4ad-b305-4a6b-89a2-190f1b5522db</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2Wy27bMBBFfyXgWi5EidbDuyBpgQBpUyRpN0VhjPhIiNCUSlJxXMP/XrKSbMdGF44XzcI784ozc+fqQPAS1a1rWmfv63Nr5YNGkx9LpGHG0QQ18MCnkqEIPYNqg7JclphVgIUYsTJPRiTHYlSxlIwoZYRALOI0yz70hauVL2XSNgoW39/egT5KxQwP1n5G3pTx7hw3aLJEUvsfGtS11E+++d5lb36CMhzTjGUxHgtM8iIvi3GZVUUiqizHJSt9lYKKK3/1qx97dnXplb0I3KIJgnVG6of+fN2X3Q1ibVgwhiPEXxzXjPv5ApTlEZqBZuBqs1grhgO70WojPPp1ui1m8GLlbz+PxOGe4H4jyrtn6+O0j7aTxSU48EZa6lrDhzBqSbntsmBcQKvcxbbWXbhpnKx1V+KgUkN1rdqZ/tIFgdYNhjfpldZ6E7wJiwbn/Rri7rGe3w4uP0n9N5P+oaopqPUJnE+ual3ws1xFyC7shQJrN0P9ttNfbSjpLPTDpp3fUEKNbNw5dfKZ931X0WuEW6PeyLCvPBbiocWxFFcQp6wUJaZxQUiRA0shxiIp8lwIyse7FH+7vd7BuIvhEI6TE8fvhGPrwLX2cIq7uiMY3mpwLMG0IEKUaZHlkJAUjytKBAADJoggY7xN8N2w7u76h9Cbnuh9J/RyY2oznXFr/XfocIhflR/B8n6fY5EGnMQJK4qcU0xYwgtalVlSYEgSTgWutpD+GIaffV5n8I9oDgGcnAD/r4AHCnT489xt+QxGhrXWQVBp/cL3QbvauscW/t1Lui3Na/MkVD3faKs/ABe1wJoLAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1ba0d2c53bba4710c3a8f7c643e45abf</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>09d898d9-d801-44c6-8fff-baf08185709c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:35</sys_created_on>
+        <sys_id>68ff059eb6144b398618f2ceab9157ca</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:00</sys_updated_on>
+        <ui_id>68ff059e-b614-4b39-8618-f2ceab9157ca</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_table</element>
+        <help/>
+        <hint/>
+        <label>Source Table</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <plural>Source Tables</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>47f99c8acba04e7ea57d91f424d5b1c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>publishing_definition</element>
+        <help/>
+        <hint/>
+        <label>Publishing Definition</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <plural>Publishing Definitions</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>aa019b70602e479e8d2ec195a20d9ef8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_record_id</element>
+        <help/>
+        <hint/>
+        <label>Source Record ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <plural>Source Record IDs</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>c7067fc4140b49a19ef320ec6b1ce9bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>page_url</element>
+        <help/>
+        <hint/>
+        <label>Page URL</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <plural>Page URLs</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>0557025a6cef46269785f010c6b40eda</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>status</element>
+        <help/>
+        <hint/>
+        <label>Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <plural>Status</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>184cc4cd0d4840448427b70cf7da693f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>page_id</element>
+        <help/>
+        <hint/>
+        <label>Page ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <plural>Page IDs</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>be0d4e79805243dfad1f1fe8321d6558</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>error_message</element>
+        <help/>
+        <hint/>
+        <label>Error Message</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5</name>
+        <plural>Error Messages</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:34</sys_created_on>
+        <sys_id>e6a7f8eeb4e949b19406d1dc0bc5026d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes/>
+        <authored_on_release_version>-1</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Convenience subflow that chains Get Publishing Context, Build Page Content, and Publish Page to Confluence for a single record</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>publish_record_to_confluence</internal_name>
+        <label_cache>[{"name":"subflow.publishing_definition","label":"Input➛Publishing Definition","type":"string","base_type":"string","usedInstances":{"cfb938b3-eec4-4650-85a2-c6b6da25f4e3":["publishing_definition"],"acc2853c-f570-486c-a40c-f41acf6779f2":["publishing_definition"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["publishing_definition"]},"attributes":{}},{"name":"subflow.source_record_id","label":"Input➛Source Record ID","type":"string","base_type":"string","usedInstances":{"cfb938b3-eec4-4650-85a2-c6b6da25f4e3":["source_record_id"],"acc2853c-f570-486c-a40c-f41acf6779f2":["source_record_id"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["source_record_id"]},"attributes":{}},{"name":"subflow.source_table","label":"Input➛Source Table","type":"string","base_type":"string","usedInstances":{"cfb938b3-eec4-4650-85a2-c6b6da25f4e3":["source_table"],"acc2853c-f570-486c-a40c-f41acf6779f2":["source_table"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["source_table"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.operation","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛operation","type":"string","base_type":"string","usedInstances":{"09d898d9-d801-44c6-8fff-baf08185709c":["condition"],"91dba1ff-d972-471f-bd34-ccd44a0f0366":["operation"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.cloud_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛cloud_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["cloud_id"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.space_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛space_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["space_id"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.page_title","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛page_title","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["page_title"]},"attributes":{}},{"name":"acc2853c-f570-486c-a40c-f41acf6779f2.adf_content","label":"acc2853c-f570-486c-a40c-f41acf6779f2➛adf_content","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["adf_content"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.existing_page_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛existing_page_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["existing_page_id"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.current_version","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛current_version","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["current_version"]},"attributes":{}},{"name":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3.parent_page_id","label":"cfb938b3-eec4-4650-85a2-c6b6da25f4e3➛parent_page_id","type":"string","base_type":"string","usedInstances":{"91dba1ff-d972-471f-bd34-ccd44a0f0366":["parent_page_id"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.page_id","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛page_id","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["page_id"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.page_url","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛page_url","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["page_url"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.status","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛status","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["status"]},"attributes":{}},{"name":"91dba1ff-d972-471f-bd34-ccd44a0f0366.error_message","label":"91dba1ff-d972-471f-bd34-ccd44a0f0366➛error_message","type":"string","base_type":"string","usedInstances":{"2f94b4ad-b305-4a6b-89a2-190f1b5522db":["error_message"]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>Publish Record to Confluence</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>80b016c53bba4710c3a8f7c643e45ae8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:02</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_variable_value action="delete_multiple" query="document_key=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8^id=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=80b016c53bba4710c3a8f7c643e45ae8^sys_idNOT INc0b016c53bba4710c3a8f7c643e45aea"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>80b016c53bba4710c3a8f7c643e45ae8</id>
+        <name>Publish Record to Confluence</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:02</sys_created_on>
+        <sys_id>c0b016c53bba4710c3a8f7c643e45aea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:02</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=c0b016c53bba4710c3a8f7c643e45aea"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=80b016c53bba4710c3a8f7c643e45ae8^sys_idNOT IN48b056c53bba4710c3a8f7c643e45a2d,88b016c53bba4710c3a8f7c643e45aeb,c4b056c53bba4710c3a8f7c643e45a16"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_table</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Table</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</model>
+        <model_id>80b016c53bba4710c3a8f7c643e45ae8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>48b056c53bba4710c3a8f7c643e45a2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=48b056c53bba4710c3a8f7c643e45a2d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>publishing_definition</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Publishing Definition</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</model>
+        <model_id>80b016c53bba4710c3a8f7c643e45ae8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:02</sys_created_on>
+        <sys_id>88b016c53bba4710c3a8f7c643e45aeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=88b016c53bba4710c3a8f7c643e45aeb"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_record_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Record ID</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</model>
+        <model_id>80b016c53bba4710c3a8f7c643e45ae8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:02</sys_created_on>
+        <sys_id>c4b056c53bba4710c3a8f7c643e45a16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c4b056c53bba4710c3a8f7c643e45a16"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=80b016c53bba4710c3a8f7c643e45ae8^sys_idNOT IN0cb056c53bba4710c3a8f7c643e45a47,18b056c53bba4710c3a8f7c643e45ab3,5cb056c53bba4710c3a8f7c643e45aa8,d4b056c53bba4710c3a8f7c643e45a6c"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>page_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Page ID</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</model>
+        <model_id>80b016c53bba4710c3a8f7c643e45ae8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>0cb056c53bba4710c3a8f7c643e45a47</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0cb056c53bba4710c3a8f7c643e45a47"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Error Message</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</model>
+        <model_id>80b016c53bba4710c3a8f7c643e45ae8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>18b056c53bba4710c3a8f7c643e45ab3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=18b056c53bba4710c3a8f7c643e45ab3"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Status</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</model>
+        <model_id>80b016c53bba4710c3a8f7c643e45ae8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>5cb056c53bba4710c3a8f7c643e45aa8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5cb056c53bba4710c3a8f7c643e45aa8"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>page_url</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Page URL</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</model>
+        <model_id>80b016c53bba4710c3a8f7c643e45ae8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>d4b056c53bba4710c3a8f7c643e45a6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d4b056c53bba4710c3a8f7c643e45a6c"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=80b016c53bba4710c3a8f7c643e45ae8^sys_idNOT IN10b056c53bba4710c3a8f7c643e45ad7,9cb056c53bba4710c3a8f7c643e45ad8,d8b056c53bba4710c3a8f7c643e45af3"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Publishing Context">a1a012c53bba4710c3a8f7c643e45af3</action_type>
+        <action_type_parent display_value="Get Publishing Context">e095917fff8747b5b6b6b0ca9e647fc6</action_type_parent>
+        <attributes/>
+        <comment>Resolve publishing definition and determine operation</comment>
+        <compiled_snapshot>a1a012c53bba4710c3a8f7c643e45af3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:04</sys_created_on>
+        <sys_id>10b056c53bba4710c3a8f7c643e45ad7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:04</sys_updated_on>
+        <ui_id>cfb938b3-eec4-4650-85a2-c6b6da25f4e3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1TTW/bMAz9K4HOhpHPZshtaFBgwNYWTdFLURi0LCcCZEnVR1rPyH8fZTtOunlpc26PIh/J96jHx4pIKBhZEO1Twe2Gy3WSsZxL7riSJCJbED7kq8r6NBfqJe5F7naIzbjVAsqHM0o0GJzvmCGLitANF5lhkiwenyLCM+wBGQxHYzqbpClM56MhncC3fE4vphM2nUE+xxYCUiYQetsNGSyPFbwj0JU6pK0zmGrfP9uWq31QmSxQHEWEvTomM4bcchCWRaQAmYFTpiQLZzwGDIPsRoqyQ+BMh81IwL5a/hvHTYcBlzMUS1mT655Ju8YmnC/BAfLw1HnTQulGccpssyYUA164y+NYA7jRtcS6xEEq9tVK+EJeN1shXYP9r2HEWyTBdNAZmLcy8tVGvdztWV5xWa+kTQpFQXQvcLi41LvApyJMsAIbJQVoHdavjdryuhi5FPFa4CMOPsGhlq9lDDQQj3GtEF9hfFmHH8DwoOIXtsFipMnv3/zdLiK2tJcCrD2ow7Umzz5wa7S2qpJmMaGEGq7ddxy5Za2AXdSdhVXe4JcYRtECCVqy7yL+Bp0+hl70R+5g9t87GKZHd7Cq+w/u6v6DH8vDCfSIOcf94y/3f073N+s74fwa8CHXH5DvOn52yvGj8b+Ov29p9pM/x+mTL6d/Cqc//QG2noseAAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=10b056c53bba4710c3a8f7c643e45ad7"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</action_type>
+        <action_type_parent display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</action_type_parent>
+        <attributes/>
+        <comment>Build ADF document from content blocks or template</comment>
+        <compiled_snapshot>76901e853bba4710c3a8f7c643e45a2a</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:04</sys_created_on>
+        <sys_id>9cb056c53bba4710c3a8f7c643e45ad8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:04</sys_updated_on>
+        <ui_id>acc2853c-f570-486c-a40c-f41acf6779f2</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTW/bMAz9K4HOhpHUTtPlNjQoMGBbh6bopSgMWpYTAbKk6SOtF+S/j7IdJ9uMZDm3R5GP5Hv0o5+3RELFyJxonwtu11yusoKVXHLHlSQR2YDwIb/dWp+XQr3Gg8jdDrEFt1pA/XRBiQaD8x0zZL4ldM1FYZgk8+eXiPACeyTwaTxhN9MkzyGdTcY0gZtyRq/ThKVTSHJsISBnAqE/+iGjxbGCMwJdrUPaOoOp7v21a7ncB5UpAsVJRNibY7JgyK0EYVlEKpAFOGVqMnfGY8AwKO6lqHsEznTYjATsm+W/cFw6DriSoVjK2lz/zLo1tuFyAQ6Qh6fOmw5K14pTZts1oRjwwt0ex1rAvW4kNiUOcrGvVsJX8nu7FdI32H81jHiLJJgOOgPzTka5XKvXhz3LOy6blXRJoSiI/gUOF5d7F/hsCROswkZZBVqH9WujNrwpRi5VvBL4iINPcKjlKxkDDcRjXCvEdxhfNOEnMDyo+IZtsBhp8sc/vt0uIra2twKsPajDtWY/feDWau1UZe1iQgk1XLvPOHLDOgG7qD8Lq7zBT2IYRQtkaMmhi/gbdPoYBtHn7mB2deoO0uToDpZN/9FD03/0ZXE4gQExl7j/6sP979P97fpOOL8B/JfrD8izf/6Tjp9e/+v4x47mMPlLnJ58OP1dOP3lN6BJBnoACQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9cb056c53bba4710c3a8f7c643e45ad8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Publish Page to Confluence">63905e853bba4710c3a8f7c643e45ae0</action_type>
+        <action_type_parent display_value="Publish Page to Confluence">c38e701364be45978f1910af97c41503</action_type_parent>
+        <attributes/>
+        <comment>Create or update Confluence page</comment>
+        <compiled_snapshot>63905e853bba4710c3a8f7c643e45ae0</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:04</sys_created_on>
+        <sys_id>d8b056c53bba4710c3a8f7c643e45af3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:04</sys_updated_on>
+        <ui_id>91dba1ff-d972-471f-bd34-ccd44a0f0366</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2ZTW+jMBCG/0rkcxIlAfJ1q5qttNJ2W22rXqoKGWMaSw6wtmmbjfrfdwyEOgkNJdwajkxmXs8M82ATHjcoxCuK5ojwKPFd5qMuesE80abNhgTezJp6Vo9SYvfssTPoTR086pGxN/bxyAlsavW3ke/vEOszGXO8fmggEWMBKSkq0HyDyJJxX9AQzR+fugjSm6MgmA0cOnUsz8P2ZDggFp4GEzK2LWo7mNogwbFHObheat3OzwWYDstU61hbpBIsfM6vf+WBd1tjJHydyLCL6JuioU8hgwBzSbtohUMfq0is0VyJBAyCYv8m5OvCY8lCBWJI+75J9g+WswfaL6BQEqHZb8WlmzcvMwcLrDDkkRCViNyVLCNGqMya4dMAJ1xdmrbM4SZWLAqzEIU9vo2OeLIKf2eNQIXA9l6BJZGQBI11nTrzvIzgbhm9/tlmecXCtCX5jzwimBdXWEHjvETpfDaIcroCIXeF4xja6cYiemFpMOSy6j9zuOgHPHqFRSV7DvuY6MT70FbcvwL7IjU/YMF0FdcgA8GQJrvfuXfvXSTX8pJjKT+qg7a6fxOdW1ZrXpWbNUaHEMFidQFLvtC8gPduwYOMMdyRU3jYRjbgYUeiigfLO8oDMXi407o7PBhl1uFh1PJwZjzE+Jm6iiloXm0iPmIbMLEnUkWFB7vE7FMqBp5BxS0od+7z0srKrUOG1ZJxZmRgP3BJFCrdCBMNTMgI5o/0Amcy6NnTMelhewCX9hCTYDyZzIJR3wguZ+MklUo4JsfgGI4MOC4WV53LorrSkuvgYbd4nBkeESyF0zbW3jeK0Abbxq5Gs11jODXAuDHqKim1DhROC8WZQUHfmFRp0vqcccpbxr5CA0RKpRpuIYFByo9cv5MetMy3j5I21OFmfJyb3NKC843AIYkQ2v2FCnnSnrIn0ORPqxKlZvvLyDH/u8rkOw9FpZ+2oA4zk5aZc2MGhlJ7n7zV7MY3eoU/EKoCZnIUGMs8kN2m6oebzEH5dXCZtricGy75c9VdUSlhZgxeDgf/KxN89KBkmQel/FHfuS5W/jSlOjM8a2f43GY4TjzO5FKnDX1iITt4AZeJp3Pvl3qWP+OrQ5o9zW3z+HNbLNJZmBVUFFjro96gBePcwJBRIuCWCEpgCPZPQ9sB33c6jkOpd7Ndwd75aJfqd/6k+rsf7w6LqTX/FV+12/n/tvOfte/I7KcOX5r7D8+qmbcJPjLzzuhw5u/zNMuTrzXrFV+s21n/LrP+9B8uHiXf1CQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d8b056c53bba4710c3a8f7c643e45af3"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=80b016c53bba4710c3a8f7c643e45ae8^sys_idNOT IN10b056c53bba4710c3a8f7c643e45ad3,14b056c53bba4710c3a8f7c643e45ad4,18b056c53bba4710c3a8f7c643e45ad5,9cb056c53bba4710c3a8f7c643e45ad0"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">17a0d2c53bba4710c3a8f7c643e45abd</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned>page_id,page_url,status,error_message</outputs_assigned>
+        <parent_ui_id>09d898d9-d801-44c6-8fff-baf08185709c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:04</sys_created_on>
+        <sys_id>10b056c53bba4710c3a8f7c643e45ad3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:04</sys_updated_on>
+        <ui_id>07e8e034-96b1-44a9-bc83-1a2f6d6e4fac</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WTU/bQBD9K9ae0yh2HH/khqBISFAqoFxQFY33I1mxXru760Aa8d87ix3HfPRAUU9w8z7P7Lz3/CbKllSNqxtnr6oDa+VSk/nNlmgoOZmTGpZ8IRkZkTWoxiP4yKStFWyu9whdScUM960/R9hksNtxQ+ZbIjU+aFCnUt++VoyXz0kSTmjCkkk4E2GcZmmezfKkyCJRJGmYsxy7FBRcYel3ZBScHCHygqLb1B6wzki97M6nXdvlDqwM88TCEeH3jmvGcb4AZfmIlKAZuMpsesRwYOda7YEVymlVlHBv5W+cF098neCoiHZ29MdFZ1ULiyNwgEQa6hrTO1dJym3rBeMCGuUOh1hbcF47Wem2xUGhdt2Vakr9rTWC9BcMvkxjkQSvvVDPvJMhLlfV3cWO5bHUj550L1VFQfUncOhc0TjPZ0u44iVetCihrtHPRW2qtXxsRi7leKnwMBaqusOhPktjoJ74GH2F8THiR4/wNRjpVZzhNdiMNOXVk4/3MCJ2Yw8VWLtXh7YufjWeW6u1U7VojfEt1MjaHeDINe8EPIyeZrkx6n+HuYDJlOUiD+kki+MsBTaFSSiiLE2FoHz2PMw/Lk6fpbkl+ZY4R59x/mhxtg5cYwdhtrcSx7OXmd6/eG+0aRYLkU+zJIUonoazgsYCgAETsYhn4TDalzt6z+m+JdbTz1h/tFhzYyqzKLm1+Es4SPc5UgDPMmA+sqXUnAVgAx/u4Eugq6BuCiXtKtCcs9fW4B9ueO++QBhNIpZlKadhzCKe0SJPoiyEKOJUhMVgX7563cFZr/svdrxle+LP7fkY2+Pjpv1f+NbOdTe5d5xKiwSvPHYyqGMbDJmkQ+iuMrde2h57+APRlHQWIAwAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1ba0d2c53bba4710c3a8f7c643e45abf</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>09d898d9-d801-44c6-8fff-baf08185709c</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:04</sys_created_on>
+        <sys_id>14b056c53bba4710c3a8f7c643e45ad4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:04</sys_updated_on>
+        <ui_id>68ff059e-b614-4b39-8618-f2ceab9157ca</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6fa0d2c53bba4710c3a8f7c643e45ac4</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>7</order>
+        <outputs_assigned>page_id,page_url,status,error_message</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:04</sys_created_on>
+        <sys_id>18b056c53bba4710c3a8f7c643e45ad5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:04</sys_updated_on>
+        <ui_id>2f94b4ad-b305-4a6b-89a2-190f1b5522db</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1XTU8bMRT8K8jnJFpvnP3IDUGRkKBUQLlUVfTWH8HC+1HbG0ij/Pc+s5sQQD2EHOEWz3rem5nsRMqK1K1vWu9u62Pn9Lwi018rUkEpyZQ0MJczLciALMC0AVmtcioKoEoNRZ7GQ5ZSNSzEmA05F4xBpKJxkox64nqNVKFdY2B59/EJ/F4bYWWQ9nuAoiyq89KS6YroCj9UYC509YDD311G8VOS0IgnIonoRFGWZmmeTfKkyGJVJCnNRY4sA4U0ePUHrj06P0XkXQR+2QTAeaureX++6Gk3G7C2IgijAyKfvKyExP0KjJMDUkIlwNd2uUWsBHFVmRfgHu10Lkp4cvov7mNRuKckOuKye7Y9zvpoO1idggcU0nLfWrkJo9Zcui4LIRW0xp/sYt2Fq8bruuooHgqzYdemLavvXRBkO2DzTSLSOhQhm2A0KO9tqJv7+vF6o/JMV8+Z9A9NzcFsT+AxuaL1Qc+KSCNLHDQroWkwz1lj64V+JqOWcjQ3eBgpUz/i0vCujoAH4SPMFUZniJ8+w3dgdXBxiWOQjDL17asvbz0gbulODDj34g5jnf1pg7bOa+9q1gUTKNzqxh/jyoXsDawHr7vSWvPBsiDz0LZsRhxalwKischVTnmUMZalIMYQURVnaaoUl5O3dfl5ffGmL10M+xQm/irMZyuM8+Bbt39dOt4BZdkZcGhVeMaUysdZkkLMxnRScKYABAjFFJvQ3arcbOy+tb9PTcZfNflsNZHW1nZWSufwl3X/tryiH1Ca93MO7Q7QOIpFlqWSUyZimfEiT+KMQhxLrmix051vYfnR5TaD/0SzT5PYV5M+R5PC61aFPzhdnIt+8zZxrh0KvA3Y+c49scSXTPNd6LG2D8HaC7b+B+zZLYc+DQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">57a0d2c53bba4710c3a8f7c643e45ab9</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Publish Record to Confluence">80b016c53bba4710c3a8f7c643e45ae8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:04</sys_created_on>
+        <sys_id>9cb056c53bba4710c3a8f7c643e45ad0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:04</sys_updated_on>
+        <ui_id>09d898d9-d801-44c6-8fff-baf08185709c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Of28pJmiztGwIhIbEhDcTLhqIbf7QWbpzZDpBF/e+7TtIWQSfYx+Neqvr4fpxzc0/SEdP4uvHuxpw4p1YVWX69mxBVBQz/d6SCjSBLwkzFlVemIhPyALoJWNcxWS6SvEymQrD5dJ6ldJqnEE9ZVmYc4lTORTIztbAQUrfbbw2lCXf3qsYyXLlaQ3v7b6qxtdLcilFADRZ5e2HJsntxpTg2W0Aq04imLImzJKY0zudRmSVlFPMExDzDghpKoTH09JnyI8PwbR0g562qVuP5cky93oHG8kAlphMinryouEASErQTE7KBioM3tiVLbxsErAB+Vel2H7FWlcdqJMQ+OfVDhEqUhkgpUBcTw+3+WIyjHWB5Bh6QSsN8Y8dQtjaKCTdMhAsJjfanz7Eh4KruVfYpHkq9yza62VSfh2GQfYHdk0SkcUhC1EFp4D4Kkddr8/hlx/JcVf1UxkttGOj9CTzOrmx84NMRocUGCxUbqGucaFFb86D6ZOSyma00HmZSm0dsGrZ4BiwQn+FgYXaO+FkP34JVQcUnLIPJuAuucMyqeqetb062E+Jad6rBuYNGHG7xvQkMB8WjtmIYT0jpC51g4wcxythOOhJYXZqVYheV84Cyr1t3EVaQLni+yDn+0mg+Z1kupSxB0jzK0490wci4qpKCjBYsOr6qkBxZy6IHDkZ9bTbytkXe0feVRT4Mm/9rRr/jlugNt4zIu+ySpv/d8tduCTRLcIoV/fcBy4UX1h/aZRz6uRKaH12hY366Czs9sNo/DaYcpt0E7GL32QoXLa5ccN0BejT2Psg+YNufS7300QAHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_table</element>
+        <help/>
+        <hint/>
+        <label>Source Table</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>00b056c53bba4710c3a8f7c643e45a34</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_record_id</element>
+        <help/>
+        <hint/>
+        <label>Source Record ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>4cb056c53bba4710c3a8f7c643e45a1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>publishing_definition</element>
+        <help/>
+        <hint/>
+        <label>Publishing Definition</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:02</sys_created_on>
+        <sys_id>80b056c53bba4710c3a8f7c643e45a12</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>page_id</element>
+        <help/>
+        <hint/>
+        <label>Page ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>04b056c53bba4710c3a8f7c643e45a4f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>page_url</element>
+        <help/>
+        <hint/>
+        <label>Page URL</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>1cb056c53bba4710c3a8f7c643e45a72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>status</element>
+        <help/>
+        <hint/>
+        <label>Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>d0b056c53bba4710c3a8f7c643e45aaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>error_message</element>
+        <help/>
+        <hint/>
+        <label>Error Message</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:03</sys_created_on>
+        <sys_id>dcb056c53bba4710c3a8f7c643e45ab9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_80b016c53bba4710c3a8f7c643e45ae8"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>47eab42d00214ce8932a4b123b5ef4d5</sys_id>
+        <latest_snapshot>80b016c53bba4710c3a8f7c643e45ae8</latest_snapshot>
+        <compiler_build/>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=47eab42d00214ce8932a4b123b5ef4d5"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=47eab42d00214ce8932a4b123b5ef4d5^sys_idNOT INf0b096c53bba4710c3a8f7c643e45a55"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@7ae69ab3</plan>
+        <plan_id display_value="Publish Record to Confluence">47eab42d00214ce8932a4b123b5ef4d5</plan_id>
+        <snapshot>80b016c53bba4710c3a8f7c643e45ae8</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:11:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f0b096c53bba4710c3a8f7c643e45a55</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:11:05</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

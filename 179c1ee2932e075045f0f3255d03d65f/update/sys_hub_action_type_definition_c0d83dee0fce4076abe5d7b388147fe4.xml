@@ -1,0 +1,2428 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <attributes>{}</attributes>
+        <authored_on_release_version>-1</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Uses ContentBuilder to build the ADF document from content blocks or template mode for a source record</description>
+        <flow_priority/>
+        <ih_action>false</ih_action>
+        <internal_name>build_page_content</internal_name>
+        <label_cache>[{"name":"{{action.publishing_definition}}","label":"action➛Publishing Definition","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.source_record_id}}","label":"action➛Source Record ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.source_table}}","label":"action➛Source Table","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[e8f060e8-f0c5-49d4-8b40-11e9904a096c].__step_status__}}","label":"step➛Build ADF Document➛Step Status","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[e8f060e8-f0c5-49d4-8b40-11e9904a096c].adf_content}}","label":"step➛Build ADF Document➛Adf Content","type":"step","ref":"","reference_display":"Adf Content","base_type":"string","parent_table_name":"","column_name":"adf_content","choices":null,"attributes":{}}]</label_cache>
+        <master_snapshot>76901e853bba4710c3a8f7c643e45a2a</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Build Page Content</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c0d83dee0fce4076abe5d7b388147fe4</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Build Page Content</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_c0d83dee0fce4076abe5d7b388147fe4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=c0d83dee0fce4076abe5d7b388147fe4"/>
+    <sys_variable_value action="delete_multiple" query="document_key=c0d83dee0fce4076abe5d7b388147fe4"/>
+    <sys_element_mapping action="delete_multiple" query="id=c0d83dee0fce4076abe5d7b388147fe4"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>adf_content</field>
+        <id>c0d83dee0fce4076abe5d7b388147fe4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>d47fe47f986048008c894dac7244e620</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table>var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4</table>
+        <value>{{step[e8f060e8-f0c5-49d4-8b40-11e9904a096c].adf_content}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=c0d83dee0fce4076abe5d7b388147fe4^sys_idNOT INe8f060e8f0c549d48b4011e9904a096c"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</action>
+        <cid>e8f060e8-f0c5-49d4-8b40-11e9904a096c</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Build ADF Document</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>e8f060e8f0c549d48b4011e9904a096c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=e8f060e8f0c549d48b4011e9904a096c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>e8f060e8f0c549d48b4011e9904a096c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>0803743006a744e8a56f1645fb55c8f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <value>(function() {
+    var publisher = new x_1295779_conflu_0.ConfluencePublisher();
+    var builder = new x_1295779_conflu_0.ContentBuilder();
+
+    // Get the source record
+    var sourceGr = new GlideRecord(source_table);
+    if (!sourceGr.get(source_record_id)) {
+        adf_content = JSON.stringify({ type: 'doc', version: 1, content: [] });
+        gs.warn('Build Page Content: Source record not found: ' + source_table + '/' + source_record_id);
+        return;
+    }
+
+    // Get the publishing definition to determine content strategy
+    var definition = publisher._getDefinition(publishing_definition);
+    if (!definition) {
+        adf_content = JSON.stringify({ type: 'doc', version: 1, content: [] });
+        gs.warn('Build Page Content: Definition not found: ' + publishing_definition);
+        return;
+    }
+
+    var adfDoc;
+
+    if (definition.template_page_id) {
+        // TEMPLATE MODE: Fetch template page and resolve placeholders
+        var config = publisher._getConnectionConfig(definition.connection_config);
+        if (!config || !config.cloud_id) {
+            adf_content = JSON.stringify({ type: 'doc', version: 1, content: [] });
+            gs.warn('Build Page Content: Connection config not found for template mode');
+            return;
+        }
+
+        var templateAdf = publisher._fetchTemplateBody(config.cloud_id, definition.template_page_id);
+        if (!templateAdf) {
+            // Fall back to content blocks if template fetch fails
+            gs.warn('Build Page Content: Template fetch failed, falling back to content blocks mode');
+            adfDoc = builder.buildDocument(publishing_definition, sourceGr);
+        } else {
+            // Build block map and resolve template
+            var blockMap = builder.buildBlockMap(publishing_definition, sourceGr);
+            adfDoc = builder.resolveTemplateDocument(templateAdf, blockMap, sourceGr);
+        }
+    } else {
+        // CONTENT BLOCKS MODE: Assemble blocks sequentially
+        adfDoc = builder.buildDocument(publishing_definition, sourceGr);
+    }
+
+    adf_content = JSON.stringify(adfDoc);
+})();
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>e8f060e8f0c549d48b4011e9904a096c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>40d1dcdb01cd49ee857955e47f3465cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <value>instance</value>
+        <variable display_value="Required Runtime">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e8f060e8f0c549d48b4011e9904a096c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>publishing_definition</field>
+        <id>e8f060e8f0c549d48b4011e9904a096c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>1c0a75ee77b74605ba9185881ecd5463</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_e8f060e8f0c549d48b4011e9904a096c</table>
+        <value>{{action.publishing_definition}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_record_id</field>
+        <id>e8f060e8f0c549d48b4011e9904a096c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>0e943fdfb8b74d128eb0f86516162677</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_e8f060e8f0c549d48b4011e9904a096c</table>
+        <value>{{action.source_record_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_table</field>
+        <id>e8f060e8f0c549d48b4011e9904a096c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>b1d22a6b25b6429888761c1632a7b88f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_e8f060e8f0c549d48b4011e9904a096c</table>
+        <value>{{action.source_table}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_e8f060e8f0c549d48b4011e9904a096c^id=e8f060e8f0c549d48b4011e9904a096c"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=e8f060e8f0c549d48b4011e9904a096c"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=e8f060e8f0c549d48b4011e9904a096c"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=e8f060e8f0c549d48b4011e9904a096c^sys_idNOT IN119c51c7da8d4e14b45ccb9890cdec14,1f57271227ec4aff8569e09be3b5ba3f,f2b92ea4d0244471b2406c523f89ab50"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_record_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Record ID</label>
+        <mandatory>false</mandatory>
+        <max_length/>
+        <model display_value="Build ADF Document">e8f060e8f0c549d48b4011e9904a096c</model>
+        <model_id>e8f060e8f0c549d48b4011e9904a096c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_e8f060e8f0c549d48b4011e9904a096c</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>119c51c7da8d4e14b45ccb9890cdec14</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>publishing_definition</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Publishing Definition</label>
+        <mandatory>false</mandatory>
+        <max_length/>
+        <model display_value="Build ADF Document">e8f060e8f0c549d48b4011e9904a096c</model>
+        <model_id>e8f060e8f0c549d48b4011e9904a096c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_e8f060e8f0c549d48b4011e9904a096c</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>1f57271227ec4aff8569e09be3b5ba3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_table</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Table</label>
+        <mandatory>false</mandatory>
+        <max_length/>
+        <model display_value="Build ADF Document">e8f060e8f0c549d48b4011e9904a096c</model>
+        <model_id>e8f060e8f0c549d48b4011e9904a096c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_e8f060e8f0c549d48b4011e9904a096c</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>f2b92ea4d0244471b2406c523f89ab50</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=e8f060e8f0c549d48b4011e9904a096c^sys_idNOT INbbbd448ad756467c93fd4d060da3aaaa"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>adf_content</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>ADF Content</label>
+        <mandatory>false</mandatory>
+        <max_length/>
+        <model display_value="Build ADF Document">e8f060e8f0c549d48b4011e9904a096c</model>
+        <model_id>e8f060e8f0c549d48b4011e9904a096c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_e8f060e8f0c549d48b4011e9904a096c</name>
+        <next_element/>
+        <order/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>bbbd448ad756467c93fd4d060da3aaaa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e8f060e8f0c549d48b4011e9904a096c"/>
+    <sys_hub_action_input action="delete_multiple" query="model=c0d83dee0fce4076abe5d7b388147fe4^sys_idNOT IN7d53852cc91848e4a5a61303e87407b3,a11467dfce9749e6852f1411c453898f,e09d948abd8140e8b414d0adb498c884"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>publishing_definition</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Publishing Definition</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</model>
+        <model_id>c0d83dee0fce4076abe5d7b388147fe4</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>7d53852cc91848e4a5a61303e87407b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=7d53852cc91848e4a5a61303e87407b3"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_record_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Record ID</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</model>
+        <model_id>c0d83dee0fce4076abe5d7b388147fe4</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>a11467dfce9749e6852f1411c453898f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a11467dfce9749e6852f1411c453898f"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_table</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Table</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</model>
+        <model_id>c0d83dee0fce4076abe5d7b388147fe4</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>e09d948abd8140e8b414d0adb498c884</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e09d948abd8140e8b414d0adb498c884"/>
+    <sys_hub_action_output action="delete_multiple" query="model=c0d83dee0fce4076abe5d7b388147fe4^sys_idNOT IN58d31f052b6c46aaadb9878ce23f9c1e,705982162c544d12b946f7990c25a845,7878a7375f424d05b658a1ae13ba34a9"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=c0d83dee0fce4076abe5d7b388147fe4-adf_content</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>adf_content</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>ADF Content</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</model>
+        <model_id>c0d83dee0fce4076abe5d7b388147fe4</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>58d31f052b6c46aaadb9878ce23f9c1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=58d31f052b6c46aaadb9878ce23f9c1e"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=58d31f052b6c46aaadb9878ce23f9c1e"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=object,uiTypeLabel=Object,uiUniqueId=c0d83dee0fce4076abe5d7b388147fe4-action-status,co_type_name=FDACTIONSTATUS</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</model>
+        <model_id>c0d83dee0fce4076abe5d7b388147fe4</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>705982162c544d12b946f7990c25a845</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=705982162c544d12b946f7990c25a845"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=705982162c544d12b946f7990c25a845"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,action_error_output=true,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=c0d83dee0fce4076abe5d7b388147fe4-action-error,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</model>
+        <model_id>c0d83dee0fce4076abe5d7b388147fe4</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>7878a7375f424d05b658a1ae13ba34a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier/>
+        <virtual>false</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=7878a7375f424d05b658a1ae13ba34a9"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=7878a7375f424d05b658a1ae13ba34a9"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=c0d83dee0fce4076abe5d7b388147fe4"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=c0d83dee0fce4076abe5d7b388147fe4"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_record_id</element>
+        <help/>
+        <hint/>
+        <label>Source Record ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <plural>Source Record IDs</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>62be67aea2204d97b5a24a76f4ed1ce4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Source Record ID</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4_source_record_id_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>publishing_definition</element>
+        <help/>
+        <hint/>
+        <label>Publishing Definition</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <plural>Publishing Definitions</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>acddd368109c4e4ba8fb158b60cd1cab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Publishing Definition</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4_publishing_definition_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_table</element>
+        <help/>
+        <hint/>
+        <label>Source Table</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <plural>Source Tables</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>d612e9aea55f43b8945e57392453b466</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Source Table</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4_source_table_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_c0d83dee0fce4076abe5d7b388147fe4"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <plural>Action Status</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>3cef07215e654800a46040aeda23d272</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Action Status</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4___action_status___en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>adf_content</element>
+        <help/>
+        <hint/>
+        <label>ADF Content</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <plural>ADF Contents</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>a6e9f41180d94fd5bbc5ba5781d43248</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ADF Content</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4_adf_content_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4</name>
+        <plural>Don't Treat as Errors</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:26</sys_created_on>
+        <sys_id>b6e8ea9dfe384885861f1ce45c54725f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Don't Treat as Error</sys_name>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4___dont_treat_as_error___en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_c0d83dee0fce4076abe5d7b388147fe4"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=c0d83dee0fce4076abe5d7b388147fe4^sys_idNOT INd3905e853bba4710c3a8f7c643e45a44"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</action_id>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_hub_action_plan","id":"d3905e853bba4710c3a8f7c643e45a44","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <snapshot>5b905e853bba4710c3a8f7c643e45a3e</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d3905e853bba4710c3a8f7c643e45a44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <attributes>{}</attributes>
+        <authored_on_release_version>-1</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Uses ContentBuilder to build the ADF document from content blocks or template mode for a source record</description>
+        <flow_priority/>
+        <internal_name>build_page_content</internal_name>
+        <label_cache>[{"name":"{{action.publishing_definition}}","label":"action➛Publishing Definition","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.source_record_id}}","label":"action➛Source Record ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.source_table}}","label":"action➛Source Table","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[e8f060e8-f0c5-49d4-8b40-11e9904a096c].__step_status__}}","label":"step➛Build ADF Document➛Step Status","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[e8f060e8-f0c5-49d4-8b40-11e9904a096c].adf_content}}","label":"step➛Build ADF Document➛Adf Content","type":"step","ref":"","reference_display":"Adf Content","base_type":"string","parent_table_name":"","column_name":"adf_content","choices":null,"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>Build Page Content</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Build Page Content">c0d83dee0fce4076abe5d7b388147fe4</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>76901e853bba4710c3a8f7c643e45a2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:41</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=76901e853bba4710c3a8f7c643e45a2a"/>
+    <sys_variable_value action="delete_multiple" query="document_key=76901e853bba4710c3a8f7c643e45a2a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>76901e853bba4710c3a8f7c643e45a2a</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_id>1f905e853bba4710c3a8f7c643e45a3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+        <value>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
+        <variable display_value="Action Status">c7905e853bba4710c3a8f7c643e45a0b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=76901e853bba4710c3a8f7c643e45a2a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>adf_content</field>
+        <id>76901e853bba4710c3a8f7c643e45a2a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_id>17905e853bba4710c3a8f7c643e45a3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+        <table>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</table>
+        <value>{{step[e8f060e8-f0c5-49d4-8b40-11e9904a096c].adf_content}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__action_status__</field>
+        <id>76901e853bba4710c3a8f7c643e45a2a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_id>5b905e853bba4710c3a8f7c643e45a3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+        <table>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=76901e853bba4710c3a8f7c643e45a2a^sys_idNOT INcb901e853bba4710c3a8f7c643e45a7c"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</action>
+        <cid>e8f060e8-f0c5-49d4-8b40-11e9904a096c</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Build ADF Document</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>cb901e853bba4710c3a8f7c643e45a7c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=cb901e853bba4710c3a8f7c643e45a7c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>cb901e853bba4710c3a8f7c643e45a7c</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>0b901e853bba4710c3a8f7c643e45ab2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <value>(function() {
+    var publisher = new x_1295779_conflu_0.ConfluencePublisher();
+    var builder = new x_1295779_conflu_0.ContentBuilder();
+
+    // Get the source record
+    var sourceGr = new GlideRecord(source_table);
+    if (!sourceGr.get(source_record_id)) {
+        adf_content = JSON.stringify({ type: 'doc', version: 1, content: [] });
+        gs.warn('Build Page Content: Source record not found: ' + source_table + '/' + source_record_id);
+        return;
+    }
+
+    // Get the publishing definition to determine content strategy
+    var definition = publisher._getDefinition(publishing_definition);
+    if (!definition) {
+        adf_content = JSON.stringify({ type: 'doc', version: 1, content: [] });
+        gs.warn('Build Page Content: Definition not found: ' + publishing_definition);
+        return;
+    }
+
+    var adfDoc;
+
+    if (definition.template_page_id) {
+        // TEMPLATE MODE: Fetch template page and resolve placeholders
+        var config = publisher._getConnectionConfig(definition.connection_config);
+        if (!config || !config.cloud_id) {
+            adf_content = JSON.stringify({ type: 'doc', version: 1, content: [] });
+            gs.warn('Build Page Content: Connection config not found for template mode');
+            return;
+        }
+
+        var templateAdf = publisher._fetchTemplateBody(config.cloud_id, definition.template_page_id);
+        if (!templateAdf) {
+            // Fall back to content blocks if template fetch fails
+            gs.warn('Build Page Content: Template fetch failed, falling back to content blocks mode');
+            adfDoc = builder.buildDocument(publishing_definition, sourceGr);
+        } else {
+            // Build block map and resolve template
+            var blockMap = builder.buildBlockMap(publishing_definition, sourceGr);
+            adfDoc = builder.resolveTemplateDocument(templateAdf, blockMap, sourceGr);
+        }
+    } else {
+        // CONTENT BLOCKS MODE: Assemble blocks sequentially
+        adfDoc = builder.buildDocument(publishing_definition, sourceGr);
+    }
+
+    adf_content = JSON.stringify(adfDoc);
+})();
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=cb901e853bba4710c3a8f7c643e45a7c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>publishing_definition</field>
+        <id>cb901e853bba4710c3a8f7c643e45a7c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>8f901e853bba4710c3a8f7c643e45ab3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_cb901e853bba4710c3a8f7c643e45a7c</table>
+        <value>{{action.publishing_definition}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>cb901e853bba4710c3a8f7c643e45a7c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>47901e853bba4710c3a8f7c643e45ab2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_record_id</field>
+        <id>cb901e853bba4710c3a8f7c643e45a7c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>c3901e853bba4710c3a8f7c643e45ab4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_cb901e853bba4710c3a8f7c643e45a7c</table>
+        <value>{{action.source_record_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_table</field>
+        <id>cb901e853bba4710c3a8f7c643e45a7c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>4b901e853bba4710c3a8f7c643e45ab3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_cb901e853bba4710c3a8f7c643e45a7c</table>
+        <value>{{action.source_table}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_cb901e853bba4710c3a8f7c643e45a7c^id=cb901e853bba4710c3a8f7c643e45a7c"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=cb901e853bba4710c3a8f7c643e45a7c"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=cb901e853bba4710c3a8f7c643e45a7c"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=cb901e853bba4710c3a8f7c643e45a7c^sys_idNOT IN03901e853bba4710c3a8f7c643e45a8a,47901e853bba4710c3a8f7c643e45a83,cb901e853bba4710c3a8f7c643e45a8f"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_table</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>source_table</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Build ADF Document">cb901e853bba4710c3a8f7c643e45a7c</model>
+        <model_id>cb901e853bba4710c3a8f7c643e45a7c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_cb901e853bba4710c3a8f7c643e45a7c</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>03901e853bba4710c3a8f7c643e45a8a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>publishing_definition</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>publishing_definition</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Build ADF Document">cb901e853bba4710c3a8f7c643e45a7c</model>
+        <model_id>cb901e853bba4710c3a8f7c643e45a7c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_cb901e853bba4710c3a8f7c643e45a7c</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>47901e853bba4710c3a8f7c643e45a83</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_record_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>source_record_id</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Build ADF Document">cb901e853bba4710c3a8f7c643e45a7c</model>
+        <model_id>cb901e853bba4710c3a8f7c643e45a7c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_cb901e853bba4710c3a8f7c643e45a7c</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>cb901e853bba4710c3a8f7c643e45a8f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=cb901e853bba4710c3a8f7c643e45a7c^sys_idNOT IN4b901e853bba4710c3a8f7c643e45aa2"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>adf_content</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>adf_content</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Build ADF Document">cb901e853bba4710c3a8f7c643e45a7c</model>
+        <model_id>cb901e853bba4710c3a8f7c643e45a7c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_cb901e853bba4710c3a8f7c643e45a7c</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>4b901e853bba4710c3a8f7c643e45aa2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=cb901e853bba4710c3a8f7c643e45a7c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>adf_content</element>
+        <help/>
+        <hint/>
+        <label>adf_content</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_cb901e853bba4710c3a8f7c643e45a7c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>43901e853bba4710c3a8f7c643e45aa7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=76901e853bba4710c3a8f7c643e45a2a^sys_idNOT IN32901e853bba4710c3a8f7c643e45a56,3a901e853bba4710c3a8f7c643e45a3b,72901e853bba4710c3a8f7c643e45a43"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_table</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Table</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</model>
+        <model_id>76901e853bba4710c3a8f7c643e45a2a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_76901e853bba4710c3a8f7c643e45a2a</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:41</sys_created_on>
+        <sys_id>32901e853bba4710c3a8f7c643e45a56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=32901e853bba4710c3a8f7c643e45a56"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>publishing_definition</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Publishing Definition</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</model>
+        <model_id>76901e853bba4710c3a8f7c643e45a2a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_76901e853bba4710c3a8f7c643e45a2a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:41</sys_created_on>
+        <sys_id>3a901e853bba4710c3a8f7c643e45a3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3a901e853bba4710c3a8f7c643e45a3b"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>source_record_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Source Record ID</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</model>
+        <model_id>76901e853bba4710c3a8f7c643e45a2a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_76901e853bba4710c3a8f7c643e45a2a</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:41</sys_created_on>
+        <sys_id>72901e853bba4710c3a8f7c643e45a43</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=72901e853bba4710c3a8f7c643e45a43"/>
+    <sys_hub_action_output action="delete_multiple" query="model=76901e853bba4710c3a8f7c643e45a2a^sys_idNOT IN4f905e853bba4710c3a8f7c643e45a03,57905e853bba4710c3a8f7c643e45a2b,c7905e853bba4710c3a8f7c643e45a0b"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=c0d83dee0fce4076abe5d7b388147fe4-adf_content</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>adf_content</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>ADF Content</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</model>
+        <model_id>76901e853bba4710c3a8f7c643e45a2a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>4f905e853bba4710c3a8f7c643e45a03</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4f905e853bba4710c3a8f7c643e45a03"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4f905e853bba4710c3a8f7c643e45a03"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=c0d83dee0fce4076abe5d7b388147fe4-action-error,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</model>
+        <model_id>76901e853bba4710c3a8f7c643e45a2a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_id>57905e853bba4710c3a8f7c643e45a2b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=57905e853bba4710c3a8f7c643e45a2b"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=57905e853bba4710c3a8f7c643e45a2b"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=c0d83dee0fce4076abe5d7b388147fe4-action-status</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</model>
+        <model_id>76901e853bba4710c3a8f7c643e45a2a</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>c7905e853bba4710c3a8f7c643e45a0b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c7905e853bba4710c3a8f7c643e45a0b"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c7905e853bba4710c3a8f7c643e45a0b"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=76901e853bba4710c3a8f7c643e45a2a"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=76901e853bba4710c3a8f7c643e45a2a^sys_idNOT IN17905e853bba4710c3a8f7c643e45a3e"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="Build Page Content">76901e853bba4710c3a8f7c643e45a2a</action_type_id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_id>17905e853bba4710c3a8f7c643e45a3e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=17905e853bba4710c3a8f7c643e45a3e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_record_id</element>
+        <help/>
+        <hint/>
+        <label>Source Record ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_76901e853bba4710c3a8f7c643e45a2a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:41</sys_created_on>
+        <sys_id>72901e853bba4710c3a8f7c643e45a54</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>source_table</element>
+        <help/>
+        <hint/>
+        <label>Source Table</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_76901e853bba4710c3a8f7c643e45a2a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:41</sys_created_on>
+        <sys_id>7a901e853bba4710c3a8f7c643e45a5a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>publishing_definition</element>
+        <help/>
+        <hint/>
+        <label>Publishing Definition</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_76901e853bba4710c3a8f7c643e45a2a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:41</sys_created_on>
+        <sys_id>b2901e853bba4710c3a8f7c643e45a41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_76901e853bba4710c3a8f7c643e45a2a"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>adf_content</element>
+        <help/>
+        <hint/>
+        <label>ADF Content</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:42</sys_created_on>
+        <sys_id>0b905e853bba4710c3a8f7c643e45a09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_id>97905e853bba4710c3a8f7c643e45a29</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 19:10:43</sys_created_on>
+        <sys_id>d3905e853bba4710c3a8f7c643e45a33</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:10:43</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_76901e853bba4710c3a8f7c643e45a2a"/>
+    <sys_hub_action_type_definition action="UPDATE">
+        <sys_id>c0d83dee0fce4076abe5d7b388147fe4</sys_id>
+        <latest_snapshot>76901e853bba4710c3a8f7c643e45a2a</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
+    </sys_hub_action_type_definition>
+</record_update>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="content_to_append" label="Content to Append" language="en" table="var__m_sys_hub_action_input_a6a13fff5dcf41dd9a7d8fa8797959b3">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>content_to_append</element>
+            <help/>
+            <hint/>
+            <label>Content to Append</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_input_a6a13fff5dcf41dd9a7d8fa8797959b3</name>
+            <plural>Content to Appends</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-17 19:10:25</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Content to Append</sys_name>
+            <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_input_a6a13fff5dcf41dd9a7d8fa8797959b3_content_to_append_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-17 19:10:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_trigger_template">
+    <sys_hub_trigger_template action="INSERT_OR_UPDATE">
+        <accessible_from>public</accessible_from>
+        <active>true</active>
+        <annotation/>
+        <attributes/>
+        <category display_value="Record">8886dd64c3d322002841b63b12d3aed4</category>
+        <comment/>
+        <description/>
+        <designer_source display_value="Workflow Studio">a1fb8738ff0032108282ffffffffff37</designer_source>
+        <name>Problem Reviews</name>
+        <order>0</order>
+        <published_trigger_id>0dfa8a89ef7a47100404a6dc9ac9b5e8</published_trigger_id>
+        <source_trigger/>
+        <state>published</state>
+        <sys_class_name>sys_hub_trigger_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 18:44:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b98a42893b7a4710c3a8f7c643e45a57</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Problem Reviews</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
+        <sys_update_name>sys_hub_trigger_template_b98a42893b7a4710c3a8f7c643e45a57</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 18:46:00</sys_updated_on>
+        <template_properties>{"showAdvancedProperties":"true","showDefinitionConditions":"true","canAddAdditionalConditions":"true"}</template_properties>
+        <trigger_category/>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_values>[{"name":"table","label":"Table","type":"table_name","displayValue":"Problem","value":"problem","readOnly":false,"extendable":false},{"name":"condition","label":"Condition","type":"conditions","displayValue":"active=true","value":"active=true","readOnly":false,"extendable":false},{"name":"run_when_setting","label":"run_when_setting","type":"choice","displayValue":"Run for Both Interactive and Non-Interactive Sessions","value":"both","readOnly":false,"extendable":false},{"name":"run_when_user_setting","label":"run_when_user_setting","type":"choice","displayValue":"Run for any user","value":"any","readOnly":false,"extendable":false},{"name":"run_when_user_list","label":"run_when_user_list","type":"glide_list","displayValue":"","value":"","readOnly":false,"extendable":false},{"name":"run_on_extended","label":"run_on_extended","type":"choice","displayValue":"Run only on current table","value":"false","readOnly":false,"extendable":false},{"name":"run_flow_in","label":"run_flow_in","type":"choice","displayValue":"Run flow in background (default)","value":"background","readOnly":false,"extendable":false},{"name":"trigger_strategy","label":"trigger_strategy","type":"choice","displayValue":"For each unique change","value":"unique_changes","readOnly":false,"extendable":false}]</trigger_values>
+        <type>record_create_or_update</type>
+    </sys_hub_trigger_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=b98a42893b7a4710c3a8f7c643e45a57"/>
+</record_update>

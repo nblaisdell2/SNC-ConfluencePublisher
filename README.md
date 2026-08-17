@@ -1,6 +1,6 @@
 # Confluence Publisher
 
-A ServiceNow scoped application that publishes record data from any ServiceNow table to **Atlassian Confluence Cloud** pages — either on demand from a form button, or automatically from Flow Designer.
+A ServiceNow scoped application that publishes record data from any ServiceNow table to **Atlassian Confluence Cloud** pages — either on demand from a form button, or automatically from ServiceNow Flow Designer.
 
 |                    |                                                                                 |
 | ------------------ | ------------------------------------------------------------------------------- |

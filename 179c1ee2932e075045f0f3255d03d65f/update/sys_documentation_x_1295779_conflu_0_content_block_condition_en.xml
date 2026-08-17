@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="source_query" label="Source Query" language="en" table="x_1295779_conflu_0_content_block">
+    <sys_documentation element="condition" label="Condition" language="en" table="x_1295779_conflu_0_content_block">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element>source_query</element>
+            <element>condition</element>
             <help/>
-            <hint>Filter condition to select records from the Source Table — use the condition builder to define criteria</hint>
-            <label>Source Query</label>
+            <hint/>
+            <label>Condition</label>
             <language>en</language>
             <name>x_1295779_conflu_0_content_block</name>
-            <plural>Source Queries</plural>
+            <plural/>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-08-17 16:39:14</sys_created_on>
+            <sys_created_on>2026-08-17 18:00:14</sys_created_on>
             <sys_mod_count>3</sys_mod_count>
-            <sys_name>Source query</sys_name>
+            <sys_name>Condition</sys_name>
             <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
             <sys_policy/>
             <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
-            <sys_update_name>sys_documentation_x_1295779_conflu_0_content_block_source_query_en</sys_update_name>
+            <sys_update_name>sys_documentation_x_1295779_conflu_0_content_block_condition_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-08-17 16:39:15</sys_updated_on>
+            <sys_updated_on>2026-08-17 18:00:15</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

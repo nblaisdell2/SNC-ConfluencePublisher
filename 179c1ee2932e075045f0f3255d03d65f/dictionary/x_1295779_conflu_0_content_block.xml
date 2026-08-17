@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="d72b22d53ced473c896bb0c79f9e796d" label="Content Block" name="x_1295779_conflu_0_content_block" type="collection">
         <element hint="Server-side script for generating dynamic content programmatically" label="Script" max_length="8000" name="script" type="script"/>
-        <element hint="Comma-separated field names for table-type blocks (e.g. number,state)" label="Columns" max_length="500" name="columns" reference="sys_dictionary" reference_qual="name=current.source_table" reference_qual_condition="name=current.source_table" type="glide_list"/>
+        <element hint="Comma-separated field names for table-type blocks (e.g. number,state)" label="Columns" max_length="500" name="columns" reference="sys_dictionary" reference_qual="javascript:'name=' + current.source_table" type="glide_list" use_reference_qualifier="advanced"/>
         <element hint="Custom display headers matching column order (e.g. Number,State)" label="Column Labels" max_length="500" name="column_labels" type="string"/>
-        <element hint="Filter condition to select records from the Source Table — use the condition builder to define criteria" label="Source query" max_length="40" name="source_query" type="conditions"/>
+        <element dependent="source_table" dependent_on_field="source_table" label="Condition" max_length="40" name="condition" type="conditions" use_dependent_field="true"/>
         <element default="50" hint="Maximum number of rows to include in a table-type block" label="Max Rows" max_length="40" name="max_rows" type="integer"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="label" hint="The Confluence rendering format: table, code, link, label, list, panel, or status" label="Type" mandatory="true" max_length="40" name="type" type="choice">
             <choice>

@@ -20,7 +20,7 @@
             </choice>
         </element>
         <element default="true" hint="When unchecked, this definition is disabled and will not publish" label="Active" max_length="40" name="active" type="boolean"/>
-        <element dependent="source_table" hint="Filter to control which source records are eligible for publishing" label="Condition" max_length="4000" name="condition" type="conditions"/>
+        <element dependent="source_table" dependent_on_field="source_table" hint="Filter to control which source records are eligible for publishing" label="Condition" max_length="4000" name="condition" type="conditions" use_dependent_field="true"/>
         <element hint="Comment added to Confluence page version history on each update" label="Version Message Template" max_length="200" name="version_message_template" type="string"/>
         <element hint="The ServiceNow table whose records will be published to Confluence" label="Source Table" max_length="80" name="source_table" type="table_name"/>
         <index name="index">

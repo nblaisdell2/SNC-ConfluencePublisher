@@ -4,22 +4,22 @@
         <license_condition/>
         <license_model>none</license_model>
         <license_roles/>
-        <name>x_1295779_conflu_0_publish_run</name>
+        <name>x_1295779_conflu_0_content_block</name>
         <op_delete>true</op_delete>
         <op_insert>true</op_insert>
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-08-10 02:09:06</sys_created_on>
-        <sys_id>c368afac83320710c9389650ceaad33d</sys_id>
+        <sys_created_on>2026-08-10 02:06:59</sys_created_on>
+        <sys_id>e31a79453bf64710c3a8f7c643e45ab7</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_1295779_conflu_0_publish_run</sys_name>
+        <sys_name>x_1295779_conflu_0_content_block</sys_name>
         <sys_package display_value="Confluence Publisher" source="x_1295779_conflu_0">179c1ee2932e075045f0f3255d03d65f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Confluence Publisher">179c1ee2932e075045f0f3255d03d65f</sys_scope>
-        <sys_update_name>ua_table_licensing_config_c368afac83320710c9389650ceaad33d</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_e31a79453bf64710c3a8f7c643e45ab7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-10 02:09:06</sys_updated_on>
+        <sys_updated_on>2026-08-10 02:06:59</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>
